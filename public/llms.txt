@@ -1,0 +1,16 @@
+# Atakan Yağlı - Portfolyo ve Kişisel Web Sitesi
+
+> Atakan Yağlı, Denizli'de yaşayan, React, Node.js ve dijital yönetim alanlarında uzmanlaşmış kıdemli bir yazılım geliştiricisidir. Sürükleyici web deneyimleri oluşturmak için teknik hassasiyeti sanatsal vizyonla birleştirir.
+
+## Hakkımda ve Uzmanlık Alanlarım
+- [Atakan Yağlı Kimdir?](https://www.atakanyagli.com/): 5 yılı aşkın yazılım geliştirme, dijital strateji ve büyüme deneyimi.
+- Temel Yetkinlikler: React, Node.js, Python, TypeScript, UI/UX, Figma, SEO, Temiz Kod Mimarisi.
+
+## Önemli Bağlantılar
+- [LinkedIn Profilim](https://www.linkedin.com/in/atakanyagli)
+- [Instagram Profilim](https://www.instagram.com/atakannyagli)
+
+## İletişim Bilgileri
+- E-posta: atakan7495@gmail.com
+- Telefon/WhatsApp: +90 544 721 89 74
+- Konum: Denizli, Türkiye
