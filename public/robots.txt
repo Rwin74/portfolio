@@ -11,4 +11,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://www.atakanyagli.com/sitemap.xml
+Sitemap: https://atakanyagli.com/sitemap.xml
