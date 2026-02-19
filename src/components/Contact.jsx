@@ -4,11 +4,11 @@ import { Mail, MapPin, Phone, MessageSquare, Linkedin, Instagram } from 'lucide-
 
 const Contact = () => {
     return (
-        <section id="contact" className="py-20 px-4">
+        <section id="contact" className="py-10 md:py-20 px-4">
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6 }}
                 className="max-w-4xl mx-auto text-center"
             >
@@ -28,7 +28,7 @@ const Contact = () => {
                     Projeni Hayata Geçir 🚀
                 </a>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 text-left">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 md:mt-20 text-left">
                     <div className="p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center text-center">
                         <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 text-primary">
                             <Mail className="w-6 h-6" />
