@@ -193,7 +193,7 @@ const Estimator = () => {
                                 />
                                 <div className="flex justify-between text-xs text-gray-500 mt-3 font-mono">
                                     <span>1 (Lading Page)</span>
-                                    <span>10+ (Kapsamlı Portakal)</span>
+                                    <span>10+ (Kapsamlı Portal)</span>
                                     <span>20 (Dev Portal)</span>
                                 </div>
                             </div>

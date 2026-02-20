@@ -59,7 +59,7 @@ const Contact = () => {
                                     <MessageSquare className="w-10 h-10" />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4 text-white">Hızlı İletişim</h3>
-                                <p className="text-gray-400 mb-8">Anında dönüş almak ve projenizi hızlandırmak için WhatsApp üzerinden direto ulaşın.</p>
+                                <p className="text-gray-400 mb-8">Anında dönüş almak ve projenizi hızlandırmak için WhatsApp üzerinden direkt ulaşın.</p>
 
                                 <a
                                     href="https://wa.me/905447218974?text=Merhaba%20Atakan,%20projem%20hakkında%20konuşmak%20istiyorum."
