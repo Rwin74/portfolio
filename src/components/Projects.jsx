@@ -110,6 +110,8 @@ const ProjectCard = ({ project, index }) => {
                     className="absolute inset-0 w-full h-full object-cover origin-center z-0"
                     animate={{ scale: isHovered ? 1.05 : 1 }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
+                    loading="lazy"
+                    decoding="async"
                 />
 
                 {/* Gradient Overlays for better text readability */}
