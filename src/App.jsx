@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import About from './components/About';
 import Contact from './components/Contact';
+import Campaign from './components/Campaign';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <main className="max-w-7xl mx-auto px-6 space-y-32 pb-20">
         <Hero />
+        <Campaign />
         <Projects />
         <About />
         <Contact />
