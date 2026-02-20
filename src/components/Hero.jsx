@@ -60,7 +60,7 @@ const Hero = () => {
                         Dijital Zanaatkar
                     </motion.span>
 
-                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 leading-[1.1] min-h-[120px]">
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 leading-[1.1] min-h-[120px]" aria-label="Dijital Gerçekliği Kodluyorum.">
                         <GlitchText text="Dijital Gerçekliği" />
                         <br />
                         <span className="text-gray-500 block text-3xl md:text-5xl mt-4">Kodluyorum.</span>

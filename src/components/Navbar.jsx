@@ -17,7 +17,15 @@ const Navbar = () => {
     const BrandName = () => {
         const name = "AtakanYağlı";
         return (
-            <div className="relative group cursor-pointer pointer-events-auto" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <a
+                href="#hero"
+                className="relative group cursor-pointer pointer-events-auto block"
+                onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                aria-label="Atakan Yağlı Portfolyo - Ana Sayfaya Git"
+            >
                 <h1 className="sr-only">Atakan Yağlı - Uzman Yazılım Geliştirici & Dijital Yönetim Uzmanı</h1>
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -46,7 +54,7 @@ const Navbar = () => {
                     </span>
                     <span className="text-primary transition-transform group-hover:translate-x-1 duration-300">/&gt;</span>
                 </motion.div>
-            </div>
+            </a>
         );
     };
 

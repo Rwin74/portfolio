@@ -114,15 +114,27 @@ const Contact = () => {
             {/* Footer */}
             <footer className="mt-32 max-w-6xl mx-auto border-t border-white/10 pt-10 pb-4 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                    <p className="text-gray-500 text-sm font-medium">
+                    <p className="text-gray-400 text-sm font-medium">
                         © {new Date().getFullYear()} Atakan Yağlı. Tüm hakları saklıdır.
                     </p>
 
                     <div className="flex gap-4">
-                        <a href="https://www.linkedin.com/in/atakanyagli" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all text-gray-400">
+                        <a
+                            href="https://www.linkedin.com/in/atakanyagli"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all text-gray-400"
+                            aria-label="LinkedIn Profilimi Görüntüle"
+                        >
                             <Linkedin className="w-5 h-5" />
                         </a>
-                        <a href="https://www.instagram.com/atakannyagli" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all text-gray-400">
+                        <a
+                            href="https://www.instagram.com/atakannyagli"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all text-gray-400"
+                            aria-label="Instagram Profilimi Görüntüle"
+                        >
                             <Instagram className="w-5 h-5" />
                         </a>
                     </div>

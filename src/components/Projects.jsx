@@ -131,6 +131,9 @@ const ProjectCard = ({ project, index }) => {
                 {/* Floating Action Button */}
                 <motion.div
                     className="absolute top-4 md:top-6 right-4 md:right-6 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 text-white"
+                    aria-label={`${project.title} projesini görüntüle`}
+                    role="button"
+                    tabIndex={0}
                     animate={{
                         scale: isHovered ? 1 : 0.9,
                         backgroundColor: isHovered ? "rgba(var(--primary-rgb), 0.9)" : "rgba(255,255,255,0.1)",
