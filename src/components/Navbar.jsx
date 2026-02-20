@@ -58,11 +58,11 @@ const Navbar = () => {
             }}
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-12 py-6 pointer-events-none"
+            className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-4 md:px-12 py-6 pointer-events-none"
         >
             <BrandName />
 
-            <nav className="pointer-events-auto bg-white/5 border border-white/10 rounded-full px-6 py-3 flex gap-6 items-center shadow-lg backdrop-blur-md">
+            <nav className="pointer-events-auto bg-white/5 border border-white/10 rounded-full px-4 md:px-6 py-3 flex gap-3 md:gap-6 items-center shadow-lg backdrop-blur-md">
                 <a href="#hero" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Ana Sayfa</a>
                 <a href="#projects" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Projeler</a>
                 <a href="#about" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Hakkımda</a>
