@@ -64,7 +64,7 @@ const Contact = () => {
                         <Instagram className="w-5 h-5" />
                     </a>
                 </div>
-                <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Atakan. Tüm hakları saklıdır.</p>
+                <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Atakan Yağlı. Tüm hakları saklıdır.</p>
             </footer>
         </section>
     );
