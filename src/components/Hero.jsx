@@ -104,7 +104,7 @@ const Hero = () => {
                     >
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-20" />
                         <img
-                            src="/hero-image.webp"
+                            src="/img/sad.jpeg"
                             alt="Atakan Yağlı - Uzman Yazılım Geliştirici ve Dijital Yönetim Uzmanı"
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
