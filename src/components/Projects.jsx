@@ -8,7 +8,7 @@ const projects = [
         title: "Seat & Eat",
         category: "Mobil Uygulama",
         description: "Restoranların boş masalarını müşterilerin görmesi ve rezervasyon yapması için geliştirilen yenilikçi bir platform.",
-        image: "/project-4.png",
+        image: "/project-4.webp",
         colSpan: "col-span-1 md:col-span-7",
         height: "h-[300px] md:h-[350px]"
     },
@@ -17,7 +17,7 @@ const projects = [
         title: "Prive English",
         category: "Web Sitesi",
         description: "İngilizce özel ders almak isteyen öğrenciler için profesyonel web platformu.",
-        image: "/project-3.png",
+        image: "/project-3.webp",
         colSpan: "col-span-1 md:col-span-5",
         height: "h-[300px] md:h-[350px]"
     },
@@ -26,7 +26,7 @@ const projects = [
         title: "Petshop Stok",
         category: "Otomasyon",
         description: "İşletmeler için kapsamlı stok yönetim otomasyonu ve analiz sistemi.",
-        image: "/project-5.png",
+        image: "/project-5.webp",
         colSpan: "col-span-1 md:col-span-5",
         height: "h-[300px] md:h-[350px]"
     },
@@ -35,7 +35,7 @@ const projects = [
         title: "KampüsOdak",
         category: "Eğitim Platformu",
         description: "Öğrencilere online kütüphane ve odaklanma özellikleri sunan web uygulaması.",
-        image: "/project-2.png",
+        image: "/project-2.webp",
         colSpan: "col-span-1 md:col-span-7",
         height: "h-[300px] md:h-[350px]"
     },
@@ -44,7 +44,7 @@ const projects = [
         title: "Bi'Torun",
         category: "Sosyal Sorumluluk",
         description: "Yaşlı bakım öğrencileri ve yaşlı bireyleri bir araya getiren sosyal girişim projesi.",
-        image: "/project-1.png",
+        image: "/project-1.webp",
         colSpan: "col-span-1 md:col-span-12",
         height: "h-[300px] md:h-[400px]"
     }
