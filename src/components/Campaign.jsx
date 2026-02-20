@@ -46,7 +46,8 @@ const Campaign = () => {
             newPrice: "4.999",
             discount: "%50 İNDİRİM!",
             badgeColor: "from-green-500 to-emerald-700",
-            glowColor: "rgba(16,185,129,0.5)"
+            glowColor: "rgba(16,185,129,0.5)",
+            shopierUrl: "https://www.shopier.com/atakanyagli/44476030"
         },
         {
             id: 2,
@@ -57,9 +58,25 @@ const Campaign = () => {
             newPrice: "7.999",
             discount: "%46 İNDİRİM!",
             badgeColor: "from-amber-500 to-orange-700",
-            glowColor: "rgba(245,158,11,0.5)"
+            glowColor: "rgba(245,158,11,0.5)",
+            shopierUrl: "https://www.shopier.com/atakanyagli/44476064"
         }
     ];
+
+    const handleShopierPayment = (url) => {
+        // Mobile fallback / dynamic centering
+        const w = 500;
+        const h = 700;
+        const windowWidth = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : window.screen.width;
+        const windowHeight = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : window.screen.height;
+
+        // Calculate center position
+        const left = (windowWidth / 2) - (w / 2) + window.screenLeft;
+        const top = (windowHeight / 2) - (h / 2) + window.screenTop;
+
+        // Open popup
+        window.open(url, 'ShopierCheckout', `scrollbars=yes, width=${w}, height=${h}, top=${top}, left=${left}`);
+    };
 
     return (
         <section id="campaigns" className="w-full relative py-16">
@@ -183,7 +200,8 @@ const Campaign = () => {
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className={`mt-6 w-full py-4 rounded-xl bg-gradient-to-r ${camp.badgeColor} font-bold text-white text-lg shadow-[0_0_20px_${camp.glowColor}] flex items-center justify-center gap-2 hover:brightness-110 transition-all`}
+                                        onClick={() => handleShopierPayment(camp.shopierUrl)}
+                                        className={`mt-6 w-full py-4 rounded-xl bg-gradient-to-r ${camp.badgeColor} font-bold text-white text-lg shadow-[0_0_20px_${camp.glowColor}] flex items-center justify-center gap-2 hover:brightness-110 transition-all cursor-pointer`}
                                     >
                                         <Rocket className="w-5 h-5" />
                                         Hemen Fırsatı Yakala
