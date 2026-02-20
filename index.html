@@ -21,9 +21,8 @@
       ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'].forEach(evt => window.removeEventListener(evt, loadGTM));
     }
 
-    // Load GTM on interaction or after 2500ms
+    // Load GTM on interaction
     ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'].forEach(evt => window.addEventListener(evt, loadGTM, { once: true, passive: true }));
-    setTimeout(loadGTM, 2500);
   </script>
 
   <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />

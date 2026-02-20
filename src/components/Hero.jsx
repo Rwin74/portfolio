@@ -3,31 +3,18 @@ import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 
 const GlitchText = ({ text }) => {
     return (
-        <span className="relative inline-block">
+        <span className="relative inline-block overflow-hidden">
             <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.1, staggerChildren: 0.1 }}
+                transition={{ duration: 0.5 }}
+                className="flex items-center"
             >
-                {text.split(" ").map((word, wIndex) => (
-                    <span key={wIndex} className="inline-block whitespace-nowrap mr-3">
-                        {word.split("").map((char, cIndex) => (
-                            <motion.span
-                                key={cIndex}
-                                initial={{ opacity: 0, display: "none" }}
-                                animate={{ opacity: 1, display: "inline-block" }}
-                                transition={{ delay: (wIndex * 5 + cIndex) * 0.1, duration: 0.1 }}
-                                className="font-mono text-white"
-                            >
-                                {char}
-                            </motion.span>
-                        ))}
-                    </span>
-                ))}
+                <span className="inline-block">{text}</span>
                 <motion.span
                     animate={{ opacity: [0, 1, 0] }}
                     transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-                    className="inline-block w-3 h-10 md:h-16 bg-primary ml-1 align-middle"
+                    className="inline-block w-2 md:w-3 h-8 md:h-12 bg-primary ml-2 mb-2"
                 />
             </motion.span>
         </span>
