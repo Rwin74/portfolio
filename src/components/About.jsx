@@ -51,10 +51,9 @@ const About = () => {
                             className="relative z-10 w-full max-w-md mx-auto aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover:border-primary/50"
                         >
                             <img
-                                src="/sad2.webp"
+                                src="/sad2.webp?v=2"
                                 alt="Atakan Yağlı"
                                 className="w-full h-full object-cover transition-transform duration-[10s] ease-linear group-hover:scale-110"
-                                onError={(e) => { e.target.src = '/sad2.webp' }} // Fallback in case they use JPEG
                             />
 
                             {/* Inner gradient overlay for depth */}
