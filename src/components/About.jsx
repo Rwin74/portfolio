@@ -42,7 +42,7 @@ const About = () => {
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
 
                     {/* Left side: Premium Image Display */}
-                    <div className="relative group perspective-1000 pl-4 md:pl-10">
+                    <div className="relative group perspective-1000 md:pl-10">
                         {/* Glowing backdrop */}
                         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-indigo-500/20 blur-3xl transform group-hover:scale-105 transition-transform duration-700" />
 
@@ -86,14 +86,14 @@ const About = () => {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
-                        className="relative z-10"
+                        className="relative z-10 mt-8 lg:mt-0"
                     >
                         <motion.span variants={itemVariants} className="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6 font-medium tracking-wide">
                             Hakkımda
                         </motion.span>
 
                         <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-                            Tasarım & Mühendislik <br />
+                            Tasarım & Mühendislik <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-indigo-500">
                                 Arasındaki Köprü
                             </span>
@@ -103,17 +103,17 @@ const About = () => {
                             Sadece işlevsel değil, aynı zamanda görsel olarak da büyüleyici dijital deneyimler yaratma tutkusu olan bir yazılım geliştiricisiyim. Hem geliştirme hem de dijital yönetim alanındaki yılların deneyimiyle, her projeye benzersiz ve kusursuz bir bakış açısı getiriyorum.
                         </motion.p>
 
-                        <motion.div variants={itemVariants} className="flex gap-8 mb-12">
+                        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 sm:gap-8 mb-12">
                             <div className="flex flex-col">
                                 <span className="text-4xl lg:text-5xl font-bold text-white mb-2">5+</span>
                                 <span className="text-sm tracking-widest text-gray-500 uppercase">Yıllık<br />Deneyim</span>
                             </div>
-                            <div className="w-px bg-white/10"></div>
+                            <div className="hidden sm:block w-px bg-white/10"></div>
                             <div className="flex flex-col">
                                 <span className="text-4xl lg:text-5xl font-bold text-white mb-2">50+</span>
                                 <span className="text-sm tracking-widest text-gray-500 uppercase">Başarılı<br />Proje</span>
                             </div>
-                            <div className="w-px bg-white/10"></div>
+                            <div className="hidden sm:block w-px bg-white/10"></div>
                             <div className="flex flex-col">
                                 <span className="text-4xl lg:text-5xl font-bold text-white mb-2">%100</span>
                                 <span className="text-sm tracking-widest text-gray-500 uppercase">Proje<br />Adanmışlığı</span>
@@ -121,7 +121,7 @@ const About = () => {
                         </motion.div>
 
                         {/* Animated Grid for Skills */}
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {skills.map((skill, index) => (
                                 <motion.div
                                     key={index}

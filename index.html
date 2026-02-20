@@ -2,14 +2,28 @@
 <html lang="tr">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQ3RDVNX90"></script>
+  <!-- Google tag (gtag.js) - Deferred for Performance -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-XQ3RDVNX90');
+
+    let gtmLoaded = false;
+    function loadGTM() {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XQ3RDVNX90';
+      document.head.appendChild(script);
+      // Remove listeners
+      ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'].forEach(evt => window.removeEventListener(evt, loadGTM));
+    }
+
+    // Load GTM on interaction or after 2500ms
+    ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'].forEach(evt => window.addEventListener(evt, loadGTM, { once: true, passive: true }));
+    setTimeout(loadGTM, 2500);
   </script>
 
   <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
