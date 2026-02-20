@@ -102,11 +102,44 @@ const Hero = () => {
                         transition={{ duration: 1.2, ease: "easeOut" }}
                         className="relative z-10 w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 group"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-20" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-20 pointer-events-none" />
+
+                        {/* Base Image (Always visible beneath) - Image 2 */}
                         <img
+                            src="/sad2.jpeg"
+                            alt="Atakan Yağlı - Uzman Yazılım Geliştirici"
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10000ms] group-hover:scale-105"
+                        />
+
+                        {/* Top Image (Wipes away to reveal base) - Image 1 */}
+                        <motion.img
                             src="/sad.jpeg"
-                            alt="Atakan Yağlı - Uzman Yazılım Geliştirici ve Dijital Yönetim Uzmanı"
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            alt="Atakan Yağlı - Dijital Yönetim Uzmanı"
+                            className="absolute inset-0 w-full h-full object-cover origin-top transition-transform duration-[10000ms] group-hover:scale-105"
+                            animate={{
+                                clipPath: ["inset(0% 0 0 0)", "inset(100% 0 0 0)", "inset(100% 0 0 0)", "inset(0% 0 0 0)"]
+                            }}
+                            transition={{
+                                duration: 10,
+                                ease: "easeInOut",
+                                times: [0, 0.4, 0.5, 0.9], // Stays full for 40% time, wipes down, stays empty for 10% time, wipes back up
+                                repeat: Infinity
+                            }}
+                        />
+
+                        {/* Simulate "Burn" glowing edge during transition */}
+                        <motion.div
+                            className="absolute left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent shadow-[0_0_20px_10px_rgba(245,158,11,0.5)] z-10 mix-blend-screen"
+                            animate={{
+                                top: ["0%", "100%", "100%", "0%"],
+                                opacity: [0, 1, 0, 0, 1, 0] // Only show during the moving phases
+                            }}
+                            transition={{
+                                duration: 10,
+                                ease: "easeInOut",
+                                times: [0, 0.4, 0.5, 0.9],
+                                repeat: Infinity
+                            }}
                         />
 
                         {/* Floating Overlay Card */}
