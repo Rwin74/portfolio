@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Projects from './components/Projects';
-import About from './components/About';
-import Contact from './components/Contact';
-import Campaign from './components/Campaign';
+
+// Lazy load below-the-fold components to reduce unused JS and TBT
+const Campaign = lazy(() => import('./components/Campaign'));
+const Projects = lazy(() => import('./components/Projects'));
+const About = lazy(() => import('./components/About'));
+const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
   return (
@@ -12,10 +14,14 @@ function App() {
       <Navbar />
       <main className="max-w-7xl mx-auto px-6 space-y-32 pb-20">
         <Hero />
-        <Campaign />
-        <Projects />
-        <About />
-        <Contact />
+
+        {/* Suspense boundary for lazy loaded sections */}
+        <Suspense fallback={<div className="min-h-[200px] flex items-center justify-center text-primary/50 animate-pulse">Yükleniyor...</div>}>
+          <Campaign />
+          <Projects />
+          <About />
+          <Contact />
+        </Suspense>
       </main>
     </div>
   );
