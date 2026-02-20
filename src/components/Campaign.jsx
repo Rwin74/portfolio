@@ -40,8 +40,8 @@ const Campaign = () => {
         {
             id: 1,
             tag: "Ramazan'a Özel",
-            title: "Kapsamlı SEO Eğitim Seti",
-            description: "Dijital dünyada rakiplerinizi geride bırakın! İlk sayfaya çıkmanın sırlarını anlattığım detaylı eğitim setine bu aya özel indirimle sahip olun.",
+            title: "The SEO Blueprint: 0'dan Zirveye Mimari",
+            description: "Arama motoru algoritmalarının gizli haritasını çözün. Organik trafiğinizi hackleyerek rakiplerinizi silüete dönüştürecek özel strateji protokolü bu aya özel indirimde.",
             oldPrice: "10.000 TL",
             newPrice: "4.999",
             discount: "%50 İNDİRİM!",
@@ -51,8 +51,8 @@ const Campaign = () => {
         {
             id: 2,
             tag: "Ramazan'a Özel",
-            title: "AI Otomasyon & Prompt Mühendisliği",
-            description: "Yapay zekanın gücünü işinize entegre edin! Profesyonel seviye prompt teknikleri ve iş akışı otomasyonlarıyla geleceğe bugünden hazırlanın.",
+            title: "AI Genesis: Zeka ve Otomasyonun Evrimi",
+            description: "İş harcamalarınızı sıfırlayıp üretkenliğinizi 10x artıracak yapay zeka entegrasyonları. İleri düzey prompt mühendisliğiyle sadece bir çalışan değil, dijital bir ordu kurun.",
             oldPrice: "15.000 TL",
             newPrice: "7.999",
             discount: "%46 İNDİRİM!",
