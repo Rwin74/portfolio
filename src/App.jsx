@@ -1,12 +1,13 @@
 import React, { Suspense, lazy, useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import BlueprintToggle from './components/BlueprintToggle';
 
 const Campaign = lazy(() => import('./components/Campaign'));
 const Projects = lazy(() => import('./components/Projects'));
 const About = lazy(() => import('./components/About'));
 const Estimator = lazy(() => import('./components/Estimator'));
-import Marketplace from './components/Marketplace';
+const Marketplace = lazy(() => import('./components/Marketplace'));
 const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           </Suspense>
         )}
       </main>
+      <BlueprintToggle />
     </div>
   );
 }
