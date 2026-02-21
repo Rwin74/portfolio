@@ -1,5 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+
+const BrandName = () => {
+    const name = "AtakanYağlı";
+    return (
+        <a
+            href="#hero"
+            className="relative group cursor-pointer pointer-events-auto block"
+            onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            aria-label="Atakan Yağlı Portfolyo - Ana Sayfaya Git"
+        >
+            <h1 className="sr-only">Atakan Yağlı - Uzman Yazılım Geliştirici & Dijital Yönetim Uzmanı</h1>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="flex items-center gap-1 font-mono font-bold text-lg md:text-xl tracking-tighter"
+            >
+                <span className="text-primary transition-transform group-hover:-translate-x-1 duration-300">&lt;</span>
+                <span className="text-white flex relative">
+                    {name.split("").map((char, i) => (
+                        <motion.span
+                            key={i}
+                            initial={{ opacity: 0, x: -5 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.5 + (i * 0.05), duration: 0.2 }}
+                        >
+                            {char}
+                        </motion.span>
+                    ))}
+                    <motion.span
+                        className="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left"
+                        initial={{ scaleX: 0 }}
+                        whileHover={{ scaleX: 1 }}
+                        transition={{ duration: 0.3 }}
+                    />
+                </span>
+                <span className="text-primary transition-transform group-hover:translate-x-1 duration-300">/&gt;</span>
+            </motion.div>
+        </a>
+    );
+};
 
 const Navbar = () => {
     const [hidden, setHidden] = useState(false);
@@ -13,50 +57,6 @@ const Navbar = () => {
             setHidden(false);
         }
     });
-
-    const BrandName = () => {
-        const name = "AtakanYağlı";
-        return (
-            <a
-                href="#hero"
-                className="relative group cursor-pointer pointer-events-auto block"
-                onClick={(e) => {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                aria-label="Atakan Yağlı Portfolyo - Ana Sayfaya Git"
-            >
-                <h1 className="sr-only">Atakan Yağlı - Uzman Yazılım Geliştirici & Dijital Yönetim Uzmanı</h1>
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="flex items-center gap-1 font-mono font-bold text-lg md:text-xl tracking-tighter"
-                >
-                    <span className="text-primary transition-transform group-hover:-translate-x-1 duration-300">&lt;</span>
-                    <span className="text-white flex relative">
-                        {name.split("").map((char, i) => (
-                            <motion.span
-                                key={i}
-                                initial={{ opacity: 0, x: -5 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.5 + (i * 0.05), duration: 0.2 }}
-                            >
-                                {char}
-                            </motion.span>
-                        ))}
-                        <motion.span
-                            className="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left"
-                            initial={{ scaleX: 0 }}
-                            whileHover={{ scaleX: 1 }}
-                            transition={{ duration: 0.3 }}
-                        />
-                    </span>
-                    <span className="text-primary transition-transform group-hover:translate-x-1 duration-300">/&gt;</span>
-                </motion.div>
-            </a>
-        );
-    };
 
     return (
         <motion.header
@@ -74,6 +74,7 @@ const Navbar = () => {
                 <a href="#hero" className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Ana Sayfa</a>
                 <a href="#projects" className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Projeler</a>
                 <a href="#about" className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Hakkımda</a>
+                <a href="#marketplace" className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Mağaza</a>
                 <a href="#contact" className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">İletişim</a>
             </nav>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Tv, Bot, ArrowTrendingUp, PenTool, Sparkles, CreditCard } from 'lucide-react';
 
@@ -22,7 +22,7 @@ const products = [
         oldPrice: 800,
         price: 299,
         color: "#1DB954",
-        icon: Tv, // Fallback icon if you prefer Music icon, we can use Music instead
+        icon: Tv,
         shopierLink: "https://shopier.com"
     },
     {
@@ -33,7 +33,7 @@ const products = [
         oldPrice: 900,
         price: 349,
         color: "#FF0000",
-        icon: Tv, // Fallback
+        icon: Tv,
         shopierLink: "https://shopier.com"
     },
     {
@@ -120,68 +120,38 @@ const categories = ["All", "Entertainment", "Intelligence", "Growth", "Pro Tools
 const Marketplace = () => {
     const [activeTab, setActiveTab] = useState("All");
 
+    useEffect(() => {
+        console.log("Marketplace mounted and active products:", products.length);
+    }, []);
+
     const filteredProducts = activeTab === "All"
         ? products
         : products.filter(p => p.category === activeTab);
 
     return (
-        <section id="marketplace" className="py-24 px-4 relative">
-            {/* Dark cyberpunk background base */}
-            <div className="absolute inset-0 bg-[#050505] -z-20 border-y border-white/5" />
-
-            {/* Subtle Grid Pattern Overlay */}
-            <div className="absolute inset-0 -z-10"
-                style={{
-                    backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)',
-                    backgroundSize: '40px 40px',
-                    maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)',
-                    WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)'
-                }}
-            />
+        <section id="marketplace" className="py-24 px-4 relative overflow-hidden bg-background">
+            {/* Background Effects */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-primary/10 rounded-full blur-[150px] -z-10" />
 
             <div className="max-w-7xl mx-auto relative z-10">
-                {/* Header Section */}
+                {/* Header */}
                 <div className="text-center mb-16">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/5 border border-white/10 text-primary text-sm font-medium tracking-wider mb-6 backdrop-blur-md uppercase"
+                        initial={{ opacity: 1, y: 0 }}
+                        className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/5 border border-white/10 text-primary text-sm font-medium tracking-wider uppercase mb-6 backdrop-blur-md"
                     >
                         <Sparkles className="w-4 h-4" />
-                        <span>The Marketplace</span>
+                        <span>Dijital Mağaza</span>
                     </motion.div>
 
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 text-white"
-                        style={{ textShadow: '0 0 40px rgba(255, 255, 255, 0.1)' }}
-                    >
-                        Digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-white">Assets</span>
-                    </motion.h2>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="text-gray-400 text-lg max-w-2xl mx-auto"
-                    >
-                        Premium lisanslar, AI araçları ve profesyonel yazılımlar. İhtiyacınız olan dijital güce anında erişin.
-                    </motion.p>
+                    <h2 className="text-4xl md:text-6xl font-black mb-6 text-white tracking-tighter">
+                        LEVEL UP YOUR <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-pink-500">DIGITAL ASSETS</span>
+                    </h2>
                 </div>
 
-                {/* Categories Tabs */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                    className="flex flex-wrap justify-center gap-2 md:gap-4 mb-16"
-                >
+                {/* Tabs */}
+                <div className="flex flex-wrap justify-center gap-2 mb-16 px-4 py-2 bg-white/5 border border-white/10 rounded-full w-fit mx-auto backdrop-blur-xl">
                     {categories.map((cat) => (
                         <button
                             key={cat}
@@ -194,100 +164,84 @@ const Marketplace = () => {
                             {cat}
                             {activeTab === cat && (
                                 <motion.div
-                                    layoutId="marketplace-tab-indicator"
-                                    className="absolute inset-0 rounded-full border border-white/20 pointer-events-none"
+                                    layoutId="marketTab"
+                                    className="absolute inset-0 border border-white/20 rounded-full"
+                                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                 />
                             )}
                         </button>
                     ))}
-                </motion.div>
+                </div>
 
-                {/* Product Grid */}
-                <motion.div
-                    layout
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-                >
-                    <AnimatePresence mode='popLayout'>
+                {/* Products Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <AnimatePresence mode="popLayout">
                         {filteredProducts.map((product) => {
                             const IconCmp = product.icon;
-
                             return (
                                 <motion.div
                                     key={product.id}
                                     layout
-                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 0.8 }}
-                                    transition={{ duration: 0.3, type: "spring", stiffness: 200, damping: 20 }}
-                                    className="relative group perspective-1000"
+                                    exit={{ opacity: 0, scale: 0.9 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="relative group h-full"
                                 >
-                                    {/* Neon Glow Behind Card */}
-                                    <div
-                                        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-500 blur-2xl"
-                                        style={{ backgroundColor: product.color }}
-                                    />
+                                    <div className="relative h-full bg-white/[0.03] border border-white/10 rounded-[2.5rem] p-8 backdrop-blur-md overflow-hidden transition-all duration-500 group-hover:bg-white/[0.08] group-hover:border-white/20 group-hover:-translate-y-2 flex flex-col justify-between">
 
-                                    {/* Glassmorphism Card */}
-                                    <motion.div
-                                        whileHover={{ scale: 1.02, rotateX: 5, rotateY: -5 }}
-                                        transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                                        className="relative h-full bg-[#111111]/80 backdrop-blur-xl border border-white/5 hover:border-white/20 rounded-2xl p-6 flex flex-col items-start overflow-hidden shadow-2xl transition-colors duration-300"
-                                        style={{ transformStyle: 'preserve-3d' }}
-                                    >
-                                        {/* Accent line top */}
                                         <div
-                                            className="absolute top-0 left-0 w-full h-1 opacity-50 group-hover:opacity-100 transition-opacity duration-300"
-                                            style={{ backgroundColor: product.color, boxShadow: `0 0 10px ${product.color}` }}
+                                            className="absolute top-0 right-0 w-32 h-32 blur-[60px] opacity-0 group-hover:opacity-40 transition-opacity duration-500"
+                                            style={{ backgroundColor: product.color }}
                                         />
 
-                                        {/* Icon & Category */}
-                                        <div className="flex justify-between items-start w-full mb-6 relative" style={{ transform: 'translateZ(20px)' }}>
-                                            <div
-                                                className="p-3 rounded-xl bg-white/5 border border-white/10"
-                                                style={{ color: product.color }}
-                                            >
-                                                <IconCmp className="w-6 h-6" />
-                                            </div>
-                                            <span className="text-xs font-mono uppercase tracking-wider text-gray-500 bg-black/50 px-3 py-1 rounded-full border border-white/5">
-                                                {product.category}
-                                            </span>
-                                        </div>
-
-                                        {/* Title area */}
-                                        <div className="mb-6 relative w-full" style={{ transform: 'translateZ(30px)' }}>
-                                            <h3 className="text-xl font-bold text-white mb-2">{product.name}</h3>
-                                            <div className="flex items-center gap-2">
-                                                <span className="text-xs font-medium px-2 py-1 rounded-md bg-white/10 text-gray-300">
-                                                    {product.duration}
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        {/* Pricing & CTA */}
-                                        <div className="mt-auto pt-6 border-t border-white/10 w-full flex items-end justify-between relative" style={{ transform: 'translateZ(40px)' }}>
-                                            <div>
-                                                <div className="text-sm text-gray-500 line-through mb-1">
-                                                    {product.oldPrice} ₺
+                                        <div>
+                                            <div className="flex justify-between items-start mb-12">
+                                                <div
+                                                    className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg border border-white/10 bg-white/5"
+                                                    style={{ color: product.color }}
+                                                >
+                                                    <IconCmp className="w-8 h-8" />
                                                 </div>
-                                                <div className="text-3xl font-black text-white flex items-end gap-1">
-                                                    {product.price} <span className="text-lg font-bold text-gray-400 mb-1">₺</span>
+                                                <div className="flex flex-col items-end">
+                                                    <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1 opacity-50">Duration</span>
+                                                    <span className="text-xs font-mono text-white bg-white/10 px-3 py-1 rounded-full border border-white/10">{product.duration}</span>
+                                                </div>
+                                            </div>
+
+                                            <div className="mb-8">
+                                                <h3 className="text-xl font-bold text-white mb-2 leading-tight group-hover:text-primary transition-colors">{product.name}</h3>
+                                                <p className="text-gray-400 text-sm font-medium">{product.category}</p>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div className="flex items-end gap-3 mb-8">
+                                                <div className="flex flex-col">
+                                                    <span className="text-xs text-red-400/70 line-through font-mono">{product.oldPrice} ₺</span>
+                                                    <span className="text-3xl font-black text-white tracking-tighter">
+                                                        {product.price}<span className="text-lg ml-1 font-bold text-gray-400 font-sans">₺</span>
+                                                    </span>
+                                                </div>
+                                                <div className="mb-1 text-[10px] bg-red-500/20 text-red-400 px-2 py-1 rounded-md font-black uppercase tracking-tighter">
+                                                    -{Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}%
                                                 </div>
                                             </div>
 
                                             <button
                                                 onClick={() => window.open(product.shopierLink, '_blank')}
-                                                className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:bg-gray-200 transition-colors group/btn shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)]"
-                                                aria-label="Get Access"
+                                                className="w-full py-4 bg-white text-black rounded-2xl font-black text-sm uppercase tracking-widest flex items-center justify-center gap-2 group/btn transition-all duration-300 hover:bg-primary hover:text-white"
                                             >
-                                                <CreditCard className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
+                                                Get Access
+                                                <CreditCard className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                                             </button>
                                         </div>
-                                    </motion.div>
+                                    </div>
                                 </motion.div>
                             );
                         })}
                     </AnimatePresence>
-                </motion.div>
+                </div>
             </div>
         </section>
     );
