@@ -7,6 +7,7 @@ const Campaign = lazy(() => import('./components/Campaign'));
 const Projects = lazy(() => import('./components/Projects'));
 const About = lazy(() => import('./components/About'));
 const Estimator = lazy(() => import('./components/Estimator'));
+const Marketplace = lazy(() => import('./components/Marketplace'));
 const Contact = lazy(() => import('./components/Contact'));
 import BlueprintToggle from './components/BlueprintToggle';
 
@@ -49,6 +50,7 @@ function App() {
             <Projects />
             <About />
             <Estimator />
+            <Marketplace />
             <Contact />
           </Suspense>
         )}
