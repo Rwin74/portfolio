@@ -8,6 +8,7 @@ const Projects = lazy(() => import('./components/Projects'));
 const About = lazy(() => import('./components/About'));
 const Estimator = lazy(() => import('./components/Estimator'));
 const Contact = lazy(() => import('./components/Contact'));
+import BlueprintToggle from './components/BlueprintToggle';
 
 function App() {
   const [isMounted, setIsMounted] = useState(false);
@@ -52,6 +53,7 @@ function App() {
           </Suspense>
         )}
       </main>
+      <BlueprintToggle />
     </div>
   );
 }

@@ -42,3 +42,78 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-foreground via-gray-400 to-gray-600;
   }
 }
+
+/* Blueprint Mode Core */
+.blueprint-mode {
+  --color-background: #0044cc !important;
+  --color-foreground: #aaddff !important;
+  --color-primary: #ffffff !important;
+  --color-secondary: #88ccff !important;
+  --color-card-bg: transparent !important;
+
+  background-color: var(--color-background) !important;
+  color: var(--color-foreground) !important;
+  font-family: "Courier New", Courier, monospace !important;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px) !important;
+  background-size: 50px 50px !important;
+}
+
+/* Force everything inside body to conform to blueprint colors */
+.blueprint-mode body,
+.blueprint-mode main,
+.blueprint-mode div,
+.blueprint-mode section,
+.blueprint-mode header,
+.blueprint-mode footer,
+.blueprint-mode nav,
+.blueprint-mode article,
+.blueprint-mode span,
+.blueprint-mode p,
+.blueprint-mode a,
+.blueprint-mode h1,
+.blueprint-mode h2,
+.blueprint-mode h3,
+.blueprint-mode h4,
+.blueprint-mode h5,
+.blueprint-mode h6,
+.blueprint-mode button,
+.blueprint-mode input,
+.blueprint-mode textarea {
+  background-color: transparent !important;
+  color: #aaddff !important;
+  border-color: rgba(170, 221, 255, 0.4) !important;
+  font-family: "Courier New", Courier, monospace !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* Structural outlines */
+.blueprint-mode div,
+.blueprint-mode section,
+.blueprint-mode header,
+.blueprint-mode footer,
+.blueprint-mode main,
+.blueprint-mode article,
+.blueprint-mode nav {
+  border: 1px dashed rgba(170, 221, 255, 0.4) !important;
+}
+
+/* Specialized image handling */
+.blueprint-mode img,
+.blueprint-mode svg,
+.blueprint-mode canvas,
+.blueprint-mode video {
+  filter: sepia(100%) hue-rotate(180deg) saturate(300%) contrast(150%) opacity(0.6) !important;
+  border: 1px solid #aaddff !important;
+  mix-blend-mode: hard-light !important;
+}
+
+/* Specific hover outline */
+.blueprint-mode .blueprint-hovered {
+  outline: 2px solid #ffffff !important;
+  outline-offset: -2px !important;
+  background-color: rgba(170, 221, 255, 0.1) !important;
+}
