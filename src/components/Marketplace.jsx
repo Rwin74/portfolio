@@ -170,22 +170,35 @@ const TiltCard = ({ product }) => {
                     </div>
 
                     {/* Action Button */}
-                    <button
+                    <motion.button
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.97 }}
                         onClick={handleBuy}
-                        className="w-full py-4 rounded-xl font-bold text-white relative overflow-hidden group/btn flex items-center justify-center gap-2 transition-all duration-300 shadow-lg"
+                        className="w-full py-4 rounded-xl font-bold text-white relative overflow-hidden group/btn flex items-center justify-center gap-2 transition-all duration-300 shadow-lg z-20"
                         style={{
-                            background: isHovered ? `rgba(${rgbColor}, 0.2)` : 'rgba(255,255,255,0.03)',
-                            border: `1px solid ${isHovered ? `rgba(${rgbColor}, 0.5)` : 'rgba(255,255,255,0.1)'}`,
-                            boxShadow: isHovered ? `0 0 20px rgba(${rgbColor}, 0.2)` : 'none'
+                            background: isHovered ? `linear-gradient(135deg, rgba(${rgbColor}, 0.3), rgba(${rgbColor}, 0.1))` : 'rgba(255,255,255,0.03)',
+                            border: `1px solid ${isHovered ? `rgba(${rgbColor}, 0.6)` : 'rgba(255,255,255,0.1)'}`,
+                            boxShadow: isHovered ? `0 0 25px rgba(${rgbColor}, 0.4), inset 0 0 10px rgba(${rgbColor}, 0.2)` : 'none'
                         }}
                     >
+                        {/* Animated background pulse/shine */}
                         <div
                             className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
-                            style={{ background: `linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)` }}
+                            style={{
+                                background: `linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)`,
+                                transform: 'skewX(-20deg)',
+                                animation: isHovered ? 'shine 2s infinite' : 'none'
+                            }}
                         />
-                        <ShoppingCart className={`w-5 h-5 relative z-10 transition-colors duration-300 ${isHovered ? 'text-white' : 'text-gray-400'}`} />
-                        <span className="relative z-10">Hemen Eriş</span>
-                    </button>
+                        <style>{`
+                            @keyframes shine {
+                                0% { left: -100%; top: 0; bottom: 0; width: 50%; }
+                                100% { left: 200%; top: 0; bottom: 0; width: 50%; }
+                            }
+                        `}</style>
+                        <ShoppingCart className={`w-5 h-5 relative z-10 transition-colors duration-300 ${isHovered ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'text-gray-400'}`} />
+                        <span className="relative z-10 tracking-wide">Hemen Eriş</span>
+                    </motion.button>
                 </div>
             </motion.div>
         </motion.div>
