@@ -11,18 +11,18 @@ import {
 const products = [
     // Eğlence
     { id: 1, category: 'Eğlence', name: 'Netflix Premium', duration: '1 Yıl', price: 499, oldPrice: 1200, color: '#E50914', icon: Video, shopierLink: '' },
-    { id: 2, category: 'Eğlence', name: 'Spotify Premium', duration: '1 Yıl', price: 299, oldPrice: 800, color: '#1DB954', icon: Music, shopierLink: '' },
-    { id: 3, category: 'Eğlence', name: 'YouTube Premium', duration: '1 Yıl', price: 349, oldPrice: 900, color: '#FF0000', icon: Youtube, shopierLink: '' },
+    { id: 2, category: 'Eğlence', name: 'Spotify Premium', duration: '1 Yıl', price: 700, oldPrice: 1400, color: '#1DB954', icon: Music, shopierLink: '' },
+    { id: 3, category: 'Eğlence', name: 'YouTube Premium', duration: '1 Yıl', price: 700, oldPrice: 1500, color: '#FF0000', icon: Youtube, shopierLink: '' },
     // Yapay Zeka
-    { id: 4, category: 'Yapay Zeka', name: 'ChatGPT Plus', duration: '1 Ay', price: 450, oldPrice: 900, color: '#10A37F', icon: Bot, shopierLink: '' },
+    { id: 4, category: 'Yapay Zeka', name: 'Pro', duration: '1 Aylık', price: 100, oldPrice: 250, color: '#10A37F', icon: Bot, shopierLink: '' },
     { id: 5, category: 'Yapay Zeka', name: 'Midjourney Pro', duration: '1 Ay', price: 600, oldPrice: 1500, color: '#9A86FD', icon: ImageIcon, shopierLink: '' },
-    { id: 6, category: 'Yapay Zeka', name: 'Gemini Advanced', duration: '1 Ay', price: 400, oldPrice: 850, color: '#4285F4', icon: Cpu, shopierLink: '' },
+    { id: 6, category: 'Yapay Zeka', name: 'Gemini Pro', duration: '1 Ay', price: 300, oldPrice: 850, color: '#4285F4', icon: Cpu, shopierLink: '' },
     // Yazılım
     { id: 7, category: 'Yazılım', name: 'AutoCAD 2024', duration: '1 Yıl', price: 999, oldPrice: 3500, color: '#D7282C', icon: Box, shopierLink: '' },
-    { id: 8, category: 'Yazılım', name: 'Adobe C. Cloud', duration: '1 Yıl', price: 899, oldPrice: 2800, color: '#FF0400', icon: PenTool, shopierLink: '' },
-    { id: 9, category: 'Yazılım', name: 'Canva Pro', duration: '1 Yıl', price: 199, oldPrice: 600, color: '#00C4CC', icon: LayoutTemplate, shopierLink: '' },
+    { id: 8, category: 'Yazılım', name: 'Adobe C. Cloud', duration: '1 Yıl', price: 1000, oldPrice: 2800, color: '#FF0400', icon: PenTool, shopierLink: '' },
+    { id: 9, category: 'Yazılım', name: 'Canva Pro', duration: '1 Yıl', price: 25, oldPrice: 150, color: '#00C4CC', icon: LayoutTemplate, shopierLink: '' },
     // Sosyal Büyüme
-    { id: 10, category: 'Sosyal Büyüme', name: '10K IG Takipçi', duration: 'Ömür Boyu', price: 250, oldPrice: 600, color: '#E1306C', icon: Users, shopierLink: '' },
+    { id: 10, category: 'Sosyal Büyüme', name: '10K IG Takipçi', duration: 'Ömür Boyu', price: 600, oldPrice: 1200, color: '#E1306C', icon: Users, shopierLink: '' },
     { id: 11, category: 'Sosyal Büyüme', name: '5K TikTok Beğeni', duration: 'Ömür Boyu', price: 150, oldPrice: 400, color: '#FE2C55', icon: Heart, shopierLink: '' },
     { id: 12, category: 'Sosyal Büyüme', name: 'Organik Yorum', duration: 'Özel', price: 200, oldPrice: 500, color: '#3B5998', icon: TrendingUp, shopierLink: '' },
 ];
