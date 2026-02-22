@@ -121,22 +121,23 @@ const TiltCard = ({ product }) => {
                 />
 
                 <div className="relative z-10 flex flex-col h-full" style={{ transform: "translateZ(30px)" }}>
-                    {/* Animated Sınırlı Stok Badge - Moved left to avoid duration overlap */}
-                    <div className="absolute -top-12 -left-2 z-20">
+                    {/* Animated Sınırlı Stok Badge - Normal Flow */}
+                    <div className="flex justify-center mb-5 w-full">
                         <motion.div
                             animate={{
                                 boxShadow: ['0 0 10px rgba(239,68,68,0.4)', '0 0 25px rgba(239,68,68,0.9)', '0 0 10px rgba(239,68,68,0.4)'],
+                                scale: [1, 1.05, 1]
                             }}
                             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                            className="px-3 py-1 bg-gradient-to-r from-red-600 to-red-500 text-white text-[10px] sm:text-xs font-black tracking-wider uppercase rounded-md border border-red-400/50 flex items-center gap-1.5"
+                            className="px-4 py-1.5 bg-gradient-to-r from-red-600 to-red-500 text-white text-[10px] sm:text-xs font-black tracking-widest uppercase rounded-full border border-red-400/50 flex items-center gap-2 shadow-[0_4px_15px_rgba(220,38,38,0.5)]"
                         >
-                            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
                             Sınırlı Stok
                         </motion.div>
                     </div>
 
                     {/* Header */}
-                    <div className="flex justify-between items-start mb-8 pt-2">
+                    <div className="flex justify-between items-start mb-6">
                         <div
                             className="p-3.5 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300"
                             style={{
