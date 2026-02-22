@@ -10,7 +10,7 @@ import {
 
 const products = [
     // Eğlence
-    { id: 1, category: 'Eğlence', name: 'Netflix Premium', duration: '1 Yıl', price: 499, oldPrice: 1200, color: '#E50914', icon: Video, shopierLink: '' },
+    { id: 1, category: 'Eğlence', name: 'Netflix Premium', duration: '1 Yıl', price: 1250, oldPrice: 4200, color: '#E50914', icon: Video, shopierLink: '' },
     { id: 2, category: 'Eğlence', name: 'Spotify Premium', duration: '1 Yıl', price: 700, oldPrice: 1400, color: '#1DB954', icon: Music, shopierLink: '' },
     { id: 3, category: 'Eğlence', name: 'YouTube Premium', duration: '1 Yıl', price: 700, oldPrice: 1500, color: '#FF0000', icon: Youtube, shopierLink: '' },
     // Yapay Zeka
@@ -121,6 +121,15 @@ const TiltCard = ({ product }) => {
                 />
 
                 <div className="relative z-10 flex flex-col h-full" style={{ transform: "translateZ(30px)" }}>
+                    {/* Animated Sınırlı Stok Badge */}
+                    <motion.div
+                        animate={{ opacity: [0.7, 1, 0.7], scale: [0.98, 1.02, 0.98] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                        className="absolute -top-3 -right-3 z-20 px-3 py-1 bg-red-500 text-white text-[10px] font-black tracking-widest uppercase rounded-full shadow-[0_0_15px_rgba(239,68,68,0.6)] border border-red-400"
+                    >
+                        Sınırlı Stok
+                    </motion.div>
+
                     {/* Header */}
                     <div className="flex justify-between items-start mb-8">
                         <div
