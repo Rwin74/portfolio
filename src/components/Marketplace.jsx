@@ -1,44 +1,256 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import {
+    Video, Music, Youtube,
+    Bot, Image as ImageIcon, Cpu,
+    TrendingUp, Users, Heart,
+    Box, PenTool, LayoutTemplate,
+    ShoppingCart
+} from 'lucide-react';
 
-const Marketplace = () => {
-    const [activeTab, setActiveTab] = useState("All");
+const products = [
+    // Entertainment
+    { id: 1, category: 'Entertainment', name: 'Netflix Premium', duration: '1 Year', price: 499, oldPrice: 1200, color: '#E50914', icon: Video, shopierLink: '' },
+    { id: 2, category: 'Entertainment', name: 'Spotify Premium', duration: '1 Year', price: 299, oldPrice: 800, color: '#1DB954', icon: Music, shopierLink: '' },
+    { id: 3, category: 'Entertainment', name: 'YouTube Premium', duration: '1 Year', price: 349, oldPrice: 900, color: '#FF0000', icon: Youtube, shopierLink: '' },
+    // AI Tools
+    { id: 4, category: 'AI Tools', name: 'ChatGPT Plus', duration: '1 Month', price: 450, oldPrice: 900, color: '#10A37F', icon: Bot, shopierLink: '' },
+    { id: 5, category: 'AI Tools', name: 'Midjourney Pro', duration: '1 Month', price: 600, oldPrice: 1500, color: '#9A86FD', icon: ImageIcon, shopierLink: '' },
+    { id: 6, category: 'AI Tools', name: 'Gemini Advanced', duration: '1 Month', price: 400, oldPrice: 850, color: '#4285F4', icon: Cpu, shopierLink: '' },
+    // Software
+    { id: 7, category: 'Software', name: 'AutoCAD 2024', duration: '1 Year', price: 999, oldPrice: 3500, color: '#D7282C', icon: Box, shopierLink: '' },
+    { id: 8, category: 'Software', name: 'Adobe C. Cloud', duration: '1 Year', price: 899, oldPrice: 2800, color: '#FF0400', icon: PenTool, shopierLink: '' },
+    { id: 9, category: 'Software', name: 'Canva Pro', duration: '1 Year', price: 199, oldPrice: 600, color: '#00C4CC', icon: LayoutTemplate, shopierLink: '' },
+    // Social Growth
+    { id: 10, category: 'Social Growth', name: '10K IG Follower', duration: 'Lifetime', price: 250, oldPrice: 600, color: '#E1306C', icon: Users, shopierLink: '' },
+    { id: 11, category: 'Social Growth', name: '5K TikTok Likes', duration: 'Lifetime', price: 150, oldPrice: 400, color: '#FE2C55', icon: Heart, shopierLink: '' },
+    { id: 12, category: 'Social Growth', name: 'Organic Comments', duration: 'Custom', price: 200, oldPrice: 500, color: '#3B5998', icon: TrendingUp, shopierLink: '' },
+];
 
-    const simpleProducts = [
-        { id: 1, category: "Entertainment", name: "Netflix", price: 499 },
-        { id: 2, category: "Intelligence", name: "ChatGPT", price: 450 }
-    ];
+const categories = ['All', 'Entertainment', 'AI Tools', 'Software', 'Social Growth'];
 
-    const filtered = activeTab === "All"
-        ? simpleProducts
-        : simpleProducts.filter(p => p.category === activeTab);
+const TiltCard = ({ product }) => {
+    const cardRef = useRef(null);
+    const [rotateX, setRotateX] = useState(0);
+    const [rotateY, setRotateY] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleMouseMove = (e) => {
+        if (!cardRef.current) return;
+        const rect = cardRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        // Tilt intensity
+        const rotateXValue = ((y - centerY) / centerY) * -15;
+        const rotateYValue = ((x - centerX) / centerX) * 15;
+
+        setRotateX(rotateXValue);
+        setRotateY(rotateYValue);
+    };
+
+    const handleMouseLeave = () => {
+        setRotateX(0);
+        setRotateY(0);
+        setIsHovered(false);
+    };
+
+    const handleBuy = () => {
+        if (product.shopierLink) {
+            const w = 500;
+            const h = 700;
+            const windowWidth = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : window.screen.width;
+            const windowHeight = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : window.screen.height;
+
+            const left = (windowWidth / 2) - (w / 2) + window.screenLeft;
+            const top = (windowHeight / 2) - (h / 2) + window.screenTop;
+
+            window.open(product.shopierLink, 'ShopierCheckout', `scrollbars=yes, width=${w}, height=${h}, top=${top}, left=${left}`);
+        } else {
+            console.log("No shopier link configured yet.");
+        }
+    };
+
+    const Icon = product.icon;
+
+    // Convert hex to rgb string for rgba usage
+    const hexToRgb = (hex) => {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : '255, 255, 255';
+    };
+
+    const rgbColor = hexToRgb(product.color);
 
     return (
-        <section id="marketplace" className="py-24 px-4 bg-background">
-            <div className="max-w-7xl mx-auto">
-                <motion.h2
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="text-4xl font-bold text-white text-center mb-12"
-                >
-                    MOTION TEST
-                </motion.h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <motion.div
+            ref={cardRef}
+            layout
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.3 }}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={handleMouseLeave}
+            style={{ perspective: 1000 }}
+            className="w-full relative group"
+        >
+            <motion.div
+                animate={{
+                    rotateX: isHovered ? rotateX : 0,
+                    rotateY: isHovered ? rotateY : 0,
+                    scale: isHovered ? 1.02 : 1
+                }}
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                style={{
+                    boxShadow: isHovered ? `0 20px 40px rgba(${rgbColor}, 0.3), inset 0 0 20px rgba(${rgbColor}, 0.1)` : '0 10px 30px rgba(0,0,0,0.5)',
+                    borderColor: isHovered ? `rgba(${rgbColor}, 0.5)` : 'rgba(255,255,255,0.1)',
+                    transformStyle: "preserve-3d"
+                }}
+                className="h-full bg-black/60 backdrop-blur-2xl border rounded-3xl p-6 md:p-8 flex flex-col relative overflow-hidden transition-all duration-300 z-10"
+            >
+                {/* Background ambient glow matching accent color */}
+                <div
+                    className="absolute inset-0 opacity-20 pointer-events-none transition-opacity duration-500"
+                    style={{
+                        background: `radial-gradient(circle at 50% 0%, rgba(${rgbColor}, 0.4), transparent 70%)`,
+                        opacity: isHovered ? 0.6 : 0.1
+                    }}
+                />
+
+                <div className="relative z-10 flex flex-col h-full" style={{ transform: "translateZ(30px)" }}>
+                    {/* Header */}
+                    <div className="flex justify-between items-start mb-8">
+                        <div
+                            className="p-3.5 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300"
+                            style={{
+                                boxShadow: isHovered ? `0 0 25px rgba(${rgbColor}, 0.5)` : 'none',
+                                color: product.color
+                            }}
+                        >
+                            <Icon className="w-7 h-7" />
+                        </div>
+                        <span className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-gray-300 backdrop-blur-md">
+                            {product.duration}
+                        </span>
+                    </div>
+
+                    {/* Title & Category */}
+                    <div className="mb-8 flex-grow">
+                        <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">{product.name}</h3>
+                        <p className="text-sm font-medium text-gray-400 uppercase tracking-wider">{product.category}</p>
+                    </div>
+
+                    {/* Pricing */}
+                    <div className="mb-8">
+                        <div className="flex items-center gap-3 mb-2">
+                            <span className="text-base text-gray-500 line-through decoration-red-500/50">{product.oldPrice} ₺</span>
+                            <span className="text-xs font-bold px-2.5 py-1 rounded bg-red-500/10 text-red-400 border border-red-500/20">Fırsat</span>
+                        </div>
+                        <div className="text-4xl font-black text-white tracking-tight flex items-baseline gap-1">
+                            {product.price} <span className="text-xl text-gray-400 font-bold">₺</span>
+                        </div>
+                    </div>
+
+                    {/* Action Button */}
+                    <button
+                        onClick={handleBuy}
+                        className="w-full py-4 rounded-xl font-bold text-white relative overflow-hidden group/btn flex items-center justify-center gap-2 transition-all duration-300 shadow-lg"
+                        style={{
+                            background: isHovered ? `rgba(${rgbColor}, 0.2)` : 'rgba(255,255,255,0.03)',
+                            border: `1px solid ${isHovered ? `rgba(${rgbColor}, 0.5)` : 'rgba(255,255,255,0.1)'}`,
+                            boxShadow: isHovered ? `0 0 20px rgba(${rgbColor}, 0.2)` : 'none'
+                        }}
+                    >
+                        <div
+                            className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
+                            style={{ background: `linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)` }}
+                        />
+                        <ShoppingCart className={`w-5 h-5 relative z-10 transition-colors duration-300 ${isHovered ? 'text-white' : 'text-gray-400'}`} />
+                        <span className="relative z-10">Get Access</span>
+                    </button>
+                </div>
+            </motion.div>
+        </motion.div>
+    );
+};
+
+const Marketplace = () => {
+    const [activeTab, setActiveTab] = useState('All');
+
+    const filtered = activeTab === 'All'
+        ? products
+        : products.filter(p => p.category === activeTab);
+
+    return (
+        <section id="marketplace" className="py-24 px-4 bg-[#050505] relative overflow-hidden">
+            {/* Dark Grid Background */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+
+            {/* Subtle Top Glow */}
+            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
+            <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-full max-w-2xl h-80 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+            <div className="max-w-7xl mx-auto relative z-10">
+                {/* Header Sequence */}
+                <div className="text-center mb-16">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 font-medium text-sm mb-8 backdrop-blur-md"
+                    >
+                        <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                        Premium Licenses & Automations
+                    </motion.div>
+
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight mb-6"
+                    >
+                        Digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-600">Marketplace</span>
+                    </motion.h2>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl"
+                    >
+                        Elevate your digital presence. Instant access to the world's standard tools, entertainment, and growth services with premium discounts.
+                    </motion.p>
+                </div>
+
+                {/* Tabs Filter */}
+                <div className="flex flex-wrap justify-center gap-3 mb-16">
+                    {categories.map(cat => (
+                        <button
+                            key={cat}
+                            onClick={() => setActiveTab(cat)}
+                            className={`px-6 py-2.5 rounded-full font-semibold transition-all duration-300 border ${activeTab === cat
+                                    ? 'bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.3)] scale-105'
+                                    : 'bg-black/40 text-gray-400 border-white/10 hover:bg-white/10 hover:text-white backdrop-blur-md hover:border-white/30'
+                                }`}
+                        >
+                            {cat}
+                        </button>
+                    ))}
+                </div>
+
+                {/* Product Grid Layout */}
+                <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <AnimatePresence>
-                        {filtered.map(p => (
-                            <motion.div
-                                key={p.id}
-                                layout
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                className="p-6 bg-white/5 border border-white/10 rounded-xl text-white"
-                            >
-                                {p.name} - {p.price} TL
-                            </motion.div>
+                        {filtered.map(product => (
+                            <TiltCard key={product.id} product={product} />
                         ))}
                     </AnimatePresence>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
