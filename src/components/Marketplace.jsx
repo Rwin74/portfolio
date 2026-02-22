@@ -9,25 +9,25 @@ import {
 } from 'lucide-react';
 
 const products = [
-    // Entertainment
-    { id: 1, category: 'Entertainment', name: 'Netflix Premium', duration: '1 Year', price: 499, oldPrice: 1200, color: '#E50914', icon: Video, shopierLink: '' },
-    { id: 2, category: 'Entertainment', name: 'Spotify Premium', duration: '1 Year', price: 299, oldPrice: 800, color: '#1DB954', icon: Music, shopierLink: '' },
-    { id: 3, category: 'Entertainment', name: 'YouTube Premium', duration: '1 Year', price: 349, oldPrice: 900, color: '#FF0000', icon: Youtube, shopierLink: '' },
-    // AI Tools
-    { id: 4, category: 'AI Tools', name: 'ChatGPT Plus', duration: '1 Month', price: 450, oldPrice: 900, color: '#10A37F', icon: Bot, shopierLink: '' },
-    { id: 5, category: 'AI Tools', name: 'Midjourney Pro', duration: '1 Month', price: 600, oldPrice: 1500, color: '#9A86FD', icon: ImageIcon, shopierLink: '' },
-    { id: 6, category: 'AI Tools', name: 'Gemini Advanced', duration: '1 Month', price: 400, oldPrice: 850, color: '#4285F4', icon: Cpu, shopierLink: '' },
-    // Software
-    { id: 7, category: 'Software', name: 'AutoCAD 2024', duration: '1 Year', price: 999, oldPrice: 3500, color: '#D7282C', icon: Box, shopierLink: '' },
-    { id: 8, category: 'Software', name: 'Adobe C. Cloud', duration: '1 Year', price: 899, oldPrice: 2800, color: '#FF0400', icon: PenTool, shopierLink: '' },
-    { id: 9, category: 'Software', name: 'Canva Pro', duration: '1 Year', price: 199, oldPrice: 600, color: '#00C4CC', icon: LayoutTemplate, shopierLink: '' },
-    // Social Growth
-    { id: 10, category: 'Social Growth', name: '10K IG Follower', duration: 'Lifetime', price: 250, oldPrice: 600, color: '#E1306C', icon: Users, shopierLink: '' },
-    { id: 11, category: 'Social Growth', name: '5K TikTok Likes', duration: 'Lifetime', price: 150, oldPrice: 400, color: '#FE2C55', icon: Heart, shopierLink: '' },
-    { id: 12, category: 'Social Growth', name: 'Organic Comments', duration: 'Custom', price: 200, oldPrice: 500, color: '#3B5998', icon: TrendingUp, shopierLink: '' },
+    // Eğlence
+    { id: 1, category: 'Eğlence', name: 'Netflix Premium', duration: '1 Yıl', price: 499, oldPrice: 1200, color: '#E50914', icon: Video, shopierLink: '' },
+    { id: 2, category: 'Eğlence', name: 'Spotify Premium', duration: '1 Yıl', price: 299, oldPrice: 800, color: '#1DB954', icon: Music, shopierLink: '' },
+    { id: 3, category: 'Eğlence', name: 'YouTube Premium', duration: '1 Yıl', price: 349, oldPrice: 900, color: '#FF0000', icon: Youtube, shopierLink: '' },
+    // Yapay Zeka
+    { id: 4, category: 'Yapay Zeka', name: 'ChatGPT Plus', duration: '1 Ay', price: 450, oldPrice: 900, color: '#10A37F', icon: Bot, shopierLink: '' },
+    { id: 5, category: 'Yapay Zeka', name: 'Midjourney Pro', duration: '1 Ay', price: 600, oldPrice: 1500, color: '#9A86FD', icon: ImageIcon, shopierLink: '' },
+    { id: 6, category: 'Yapay Zeka', name: 'Gemini Advanced', duration: '1 Ay', price: 400, oldPrice: 850, color: '#4285F4', icon: Cpu, shopierLink: '' },
+    // Yazılım
+    { id: 7, category: 'Yazılım', name: 'AutoCAD 2024', duration: '1 Yıl', price: 999, oldPrice: 3500, color: '#D7282C', icon: Box, shopierLink: '' },
+    { id: 8, category: 'Yazılım', name: 'Adobe C. Cloud', duration: '1 Yıl', price: 899, oldPrice: 2800, color: '#FF0400', icon: PenTool, shopierLink: '' },
+    { id: 9, category: 'Yazılım', name: 'Canva Pro', duration: '1 Yıl', price: 199, oldPrice: 600, color: '#00C4CC', icon: LayoutTemplate, shopierLink: '' },
+    // Sosyal Büyüme
+    { id: 10, category: 'Sosyal Büyüme', name: '10K IG Takipçi', duration: 'Ömür Boyu', price: 250, oldPrice: 600, color: '#E1306C', icon: Users, shopierLink: '' },
+    { id: 11, category: 'Sosyal Büyüme', name: '5K TikTok Beğeni', duration: 'Ömür Boyu', price: 150, oldPrice: 400, color: '#FE2C55', icon: Heart, shopierLink: '' },
+    { id: 12, category: 'Sosyal Büyüme', name: 'Organik Yorum', duration: 'Özel', price: 200, oldPrice: 500, color: '#3B5998', icon: TrendingUp, shopierLink: '' },
 ];
 
-const categories = ['All', 'Entertainment', 'AI Tools', 'Software', 'Social Growth'];
+const categories = ['Tümü', 'Eğlence', 'Yapay Zeka', 'Yazılım', 'Sosyal Büyüme'];
 
 const TiltCard = ({ product }) => {
     const cardRef = useRef(null);
@@ -169,7 +169,7 @@ const TiltCard = ({ product }) => {
                             style={{ background: `linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)` }}
                         />
                         <ShoppingCart className={`w-5 h-5 relative z-10 transition-colors duration-300 ${isHovered ? 'text-white' : 'text-gray-400'}`} />
-                        <span className="relative z-10">Get Access</span>
+                        <span className="relative z-10">Hemen Eriş</span>
                     </button>
                 </div>
             </motion.div>
@@ -178,9 +178,9 @@ const TiltCard = ({ product }) => {
 };
 
 const Marketplace = () => {
-    const [activeTab, setActiveTab] = useState('All');
+    const [activeTab, setActiveTab] = useState('Tümü');
 
-    const filtered = activeTab === 'All'
+    const filtered = activeTab === 'Tümü'
         ? products
         : products.filter(p => p.category === activeTab);
 
@@ -203,7 +203,7 @@ const Marketplace = () => {
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 font-medium text-sm mb-8 backdrop-blur-md"
                     >
                         <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                        Premium Licenses & Automations
+                        Premium Lisanslar ve Otomasyonlar
                     </motion.div>
 
                     <motion.h2
@@ -213,7 +213,7 @@ const Marketplace = () => {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight mb-6"
                     >
-                        Digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-600">Marketplace</span>
+                        Dijital <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-600">Mağaza</span>
                     </motion.h2>
 
                     <motion.p
@@ -223,7 +223,7 @@ const Marketplace = () => {
                         transition={{ delay: 0.2 }}
                         className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl"
                     >
-                        Elevate your digital presence. Instant access to the world's standard tools, entertainment, and growth services with premium discounts.
+                        Dijital varlığınızı zirveye taşıyın. Dünyanın standart araçlarına, eğlence ve büyüme hizmetlerine premium indirimlerle anında erişim sağlayın.
                     </motion.p>
                 </div>
 
@@ -234,8 +234,8 @@ const Marketplace = () => {
                             key={cat}
                             onClick={() => setActiveTab(cat)}
                             className={`px-6 py-2.5 rounded-full font-semibold transition-all duration-300 border ${activeTab === cat
-                                    ? 'bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.3)] scale-105'
-                                    : 'bg-black/40 text-gray-400 border-white/10 hover:bg-white/10 hover:text-white backdrop-blur-md hover:border-white/30'
+                                ? 'bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.3)] scale-105'
+                                : 'bg-black/40 text-gray-400 border-white/10 hover:bg-white/10 hover:text-white backdrop-blur-md hover:border-white/30'
                                 }`}
                         >
                             {cat}

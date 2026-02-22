@@ -58,6 +58,14 @@ const Navbar = () => {
         }
     });
 
+    const handleScroll = (e, id) => {
+        e.preventDefault();
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
+
     return (
         <motion.header
             variants={{
@@ -71,11 +79,11 @@ const Navbar = () => {
             <BrandName />
 
             <nav className="pointer-events-auto bg-white/5 border border-white/10 rounded-full px-3 md:px-6 py-2 md:py-3 flex gap-3 md:gap-6 items-center shadow-lg backdrop-blur-md">
-                <a href="#hero" className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Ana Sayfa</a>
-                <a href="#projects" className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Projeler</a>
-                <a href="#about" className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Hakkımda</a>
-                <a href="#marketplace" className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Mağaza</a>
-                <a href="#contact" className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">İletişim</a>
+                <a href="#hero" onClick={(e) => handleScroll(e, 'hero')} className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Ana Sayfa</a>
+                <a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Projeler</a>
+                <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Hakkımda</a>
+                <a href="#marketplace" onClick={(e) => handleScroll(e, 'marketplace')} className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Mağaza</a>
+                <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">İletişim</a>
             </nav>
 
             {/* Empty div for balancing if needed, or maybe a small CTA later */}
