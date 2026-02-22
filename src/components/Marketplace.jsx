@@ -14,7 +14,7 @@ const products = [
     { id: 2, category: 'Eğlence', name: 'Spotify Premium', duration: '1 Yıl', price: 700, oldPrice: 1400, color: '#1DB954', icon: Music, shopierLink: '' },
     { id: 3, category: 'Eğlence', name: 'YouTube Premium', duration: '1 Yıl', price: 700, oldPrice: 1500, color: '#FF0000', icon: Youtube, shopierLink: '' },
     // Yapay Zeka
-    { id: 4, category: 'Yapay Zeka', name: 'Pro', duration: '1 Aylık', price: 100, oldPrice: 250, color: '#10A37F', icon: Bot, shopierLink: '' },
+    { id: 4, category: 'Yapay Zeka', name: 'ChatGPT Pro', duration: '1 Aylık', price: 100, oldPrice: 250, color: '#10A37F', icon: Bot, shopierLink: '' },
     { id: 5, category: 'Yapay Zeka', name: 'Midjourney Pro', duration: '1 Ay', price: 600, oldPrice: 1500, color: '#9A86FD', icon: ImageIcon, shopierLink: '' },
     { id: 6, category: 'Yapay Zeka', name: 'Gemini Pro', duration: '1 Ay', price: 300, oldPrice: 850, color: '#4285F4', icon: Cpu, shopierLink: '' },
     // Yazılım
@@ -121,17 +121,22 @@ const TiltCard = ({ product }) => {
                 />
 
                 <div className="relative z-10 flex flex-col h-full" style={{ transform: "translateZ(30px)" }}>
-                    {/* Animated Sınırlı Stok Badge */}
-                    <motion.div
-                        animate={{ opacity: [0.7, 1, 0.7], scale: [0.98, 1.02, 0.98] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute -top-3 -right-3 z-20 px-3 py-1 bg-red-500 text-white text-[10px] font-black tracking-widest uppercase rounded-full shadow-[0_0_15px_rgba(239,68,68,0.6)] border border-red-400"
-                    >
-                        Sınırlı Stok
-                    </motion.div>
+                    {/* Animated Sınırlı Stok Badge - Moved left to avoid duration overlap */}
+                    <div className="absolute -top-12 -left-2 z-20">
+                        <motion.div
+                            animate={{
+                                boxShadow: ['0 0 10px rgba(239,68,68,0.4)', '0 0 25px rgba(239,68,68,0.9)', '0 0 10px rgba(239,68,68,0.4)'],
+                            }}
+                            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                            className="px-3 py-1 bg-gradient-to-r from-red-600 to-red-500 text-white text-[10px] sm:text-xs font-black tracking-wider uppercase rounded-md border border-red-400/50 flex items-center gap-1.5"
+                        >
+                            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                            Sınırlı Stok
+                        </motion.div>
+                    </div>
 
                     {/* Header */}
-                    <div className="flex justify-between items-start mb-8">
+                    <div className="flex justify-between items-start mb-8 pt-2">
                         <div
                             className="p-3.5 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300"
                             style={{
