@@ -23,6 +23,46 @@ const GlitchText = ({ text }) => {
     );
 };
 
+const SpotlightButton = ({ href, defaultText, revealText, isPrimary }) => {
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [opacity, setOpacity] = useState(0);
+
+    const handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        setPosition({
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top,
+        });
+    };
+
+    return (
+        <a
+            href={href}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={() => setOpacity(1)}
+            onMouseLeave={() => setOpacity(0)}
+            className={`relative overflow-hidden px-8 py-3 rounded-full font-semibold transition-colors duration-300 text-center flex-1 sm:flex-none ${isPrimary ? 'bg-white text-black' : 'bg-white/5 border border-white/10 text-white backdrop-blur-sm'
+                }`}
+        >
+            <span className="relative z-10">{defaultText}</span>
+            <div
+                className={`absolute inset-0 flex items-center justify-center z-20 pointer-events-none ${isPrimary ? 'bg-primary text-white' : 'bg-white text-black'
+                    }`}
+                style={{
+                    opacity,
+                    WebkitMaskImage: `radial-gradient(circle 50px at ${position.x}px ${position.y}px, black 30%, transparent 100%)`,
+                    maskImage: `radial-gradient(circle 50px at ${position.x}px ${position.y}px, black 30%, transparent 100%)`,
+                    transition: 'opacity 0.2s ease',
+                }}
+            >
+                <span className={`font-bold tracking-widest text-sm uppercase`}>
+                    {revealText}
+                </span>
+            </div>
+        </a>
+    );
+};
+
 const Hero = () => {
     const { scrollY } = useScroll();
     const y2 = useTransform(scrollY, [0, 500], [0, -150]);
@@ -75,15 +115,10 @@ const Hero = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 2.2, duration: 1 }}
-                        className="flex gap-4"
+                        className="flex flex-col sm:flex-row gap-4"
                     >
-                        <a href="#projects" className="group relative px-8 py-3 rounded-full bg-white text-black font-semibold overflow-hidden">
-                            <span className="relative z-10 group-hover:text-white transition-colors duration-300">Projelerimi Gör</span>
-                            <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
-                        </a>
-                        <a href="#contact" className="px-8 py-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors backdrop-blur-sm text-white">
-                            İletişime Geç
-                        </a>
+                        <SpotlightButton href="#projects" defaultText="Projelerimi Gör" revealText="Her Zaman" isPrimary={true} />
+                        <SpotlightButton href="#contact" defaultText="İletişime Geç" revealText="En İyisi" isPrimary={false} />
                     </motion.div>
                 </div>
 
