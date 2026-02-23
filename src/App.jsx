@@ -7,7 +7,7 @@ const Campaign = lazy(() => import('./components/Campaign'));
 const Projects = lazy(() => import('./components/Projects'));
 const About = lazy(() => import('./components/About'));
 const Estimator = lazy(() => import('./components/Estimator'));
-const Marketplace = lazy(() => import('./components/Marketplace'));
+
 const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
             <Projects />
             <About />
             <Estimator />
-            <Marketplace />
+
             <Contact />
           </Suspense>
         )}

@@ -82,7 +82,7 @@ const Navbar = () => {
                 <a href="#hero" onClick={(e) => handleScroll(e, 'hero')} className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Ana Sayfa</a>
                 <a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Projeler</a>
                 <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Hakkımda</a>
-                <a href="#marketplace" onClick={(e) => handleScroll(e, 'marketplace')} className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Mağaza</a>
+
                 <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">İletişim</a>
             </nav>
 
