@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 import BlueprintToggle from './components/BlueprintToggle';
 import Preloader from './components/Preloader';
 import CustomCursor from './components/CustomCursor';
-import MatrixRain from './components/MatrixRain';
+const MatrixRain = lazy(() => import('./components/MatrixRain'));
 
 const Campaign = lazy(() => import('./components/Campaign'));
 const Projects = lazy(() => import('./components/Projects'));
@@ -86,7 +86,11 @@ function App() {
         className="fixed top-0 left-0 right-0 h-1 bg-primary z-[100000] origin-left drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]"
         style={{ scaleX }}
       />
-      <MatrixRain active={matrixMode} onClose={() => setMatrixMode(false)} />
+      {matrixMode && (
+        <Suspense fallback={null}>
+          <MatrixRain active={matrixMode} onClose={() => setMatrixMode(false)} />
+        </Suspense>
+      )}
       <CustomCursor />
       {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
       <div className={`bg-background min-h-screen text-foreground selection:bg-primary selection:text-white transition-opacity duration-1000 ${isLoading ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'}`}>

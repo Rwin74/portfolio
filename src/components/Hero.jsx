@@ -1,7 +1,7 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import Particles from './3d/Particles';
+
+const HeroParticles = lazy(() => import('./3d/HeroParticles'));
 
 const GlitchText = ({ text }) => {
     return (
@@ -75,11 +75,9 @@ const Hero = () => {
                 <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] animate-float opacity-30 mix-blend-screen" />
                 <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/10 rounded-full blur-[120px] animate-float opacity-20 mix-blend-screen" style={{ animationDelay: '2s' }} />
                 <div className="absolute inset-0 z-0 opacity-40">
-                    <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
-                        <Suspense fallback={null}>
-                            <Particles count={700} />
-                        </Suspense>
-                    </Canvas>
+                    <Suspense fallback={null}>
+                        <HeroParticles />
+                    </Suspense>
                 </div>
             </div>
 
