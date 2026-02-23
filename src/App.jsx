@@ -1,4 +1,5 @@
 import React, { Suspense, lazy, useState, useEffect } from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import BlueprintToggle from './components/BlueprintToggle';
@@ -17,6 +18,14 @@ function App() {
   const [isMounted, setIsMounted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [matrixMode, setMatrixMode] = useState(false);
+
+  // Scroll Progress Implementation
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     setIsMounted(true);
@@ -73,6 +82,10 @@ function App() {
 
   return (
     <>
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-primary z-[100000] origin-left drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]"
+        style={{ scaleX }}
+      />
       <MatrixRain active={matrixMode} onClose={() => setMatrixMode(false)} />
       <CustomCursor />
       {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
