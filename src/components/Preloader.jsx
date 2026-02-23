@@ -11,8 +11,8 @@ const Preloader = ({ onComplete }) => {
             setIsTypingComplete(true);
             setTimeout(() => {
                 onComplete();
-            }, 800); // Wait for exit animation to almost finish
-        }, text.length * 100 + 800); // Typing duration + delay
+            }, 500); // Faster exit queue
+        }, text.length * 30 + 300); // 30ms typing duration + 300ms delay
 
         return () => clearTimeout(timer);
     }, [onComplete, text.length]);
@@ -22,8 +22,8 @@ const Preloader = ({ onComplete }) => {
             {!isTypingComplete && (
                 <motion.div
                     initial={{ opacity: 1 }}
-                    exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                    exit={{ opacity: 0, scale: 1.1, filter: "blur(5px)" }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
                     className="fixed inset-0 z-[9999] flex items-center justify-center bg-background"
                 >
                     <div className="font-mono text-2xl md:text-4xl font-bold flex">
@@ -33,8 +33,8 @@ const Preloader = ({ onComplete }) => {
                                 initial={{ opacity: 0, display: "none" }}
                                 animate={{ opacity: 1, display: "inline-block" }}
                                 transition={{
-                                    delay: index * 0.1,
-                                    duration: 0.1,
+                                    delay: index * 0.03, // 30ms delay instead of 100ms
+                                    duration: 0.05,
                                     type: "tween"
                                 }}
                                 className={

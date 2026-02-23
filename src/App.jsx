@@ -93,7 +93,7 @@ function App() {
       )}
       <CustomCursor />
       {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
-      <div className={`bg-background min-h-screen text-foreground selection:bg-primary selection:text-white transition-opacity duration-1000 ${isLoading ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'}`}>
+      <div className={`bg-background min-h-screen text-foreground selection:bg-primary selection:text-white transition-opacity duration-1000 ${isLoading ? 'h-screen overflow-hidden' : ''}`}>
         <Navbar />
         <main className="max-w-7xl mx-auto px-6 space-y-32 pb-20">
           <Hero />
