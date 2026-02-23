@@ -18,7 +18,7 @@ const CustomCursor = () => {
         };
 
         const handleMouseOver = (e) => {
-            const isClickable = e.target.closest('a, button, input, textarea, [role="button"]');
+            const isClickable = e.target.closest('a, button, input, textarea, [role="button"], .cursor-pointer');
             setIsHovered(!!isClickable);
         };
 
@@ -45,7 +45,7 @@ const CustomCursor = () => {
             />
             <style jsx global>{`
                 @media (min-width: 768px) {
-                    body, a, button {
+                    * {
                         cursor: none !important;
                     }
                 }
