@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
+import { Canvas } from '@react-three/fiber';
+import Particles from './3d/Particles';
 
 const GlitchText = ({ text }) => {
     return (
@@ -29,9 +31,16 @@ const Hero = () => {
         <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20">
 
             {/* Dynamic Background Elements - Cleaned up circles */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] animate-float opacity-30 mix-blend-screen" />
                 <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/10 rounded-full blur-[120px] animate-float opacity-20 mix-blend-screen" style={{ animationDelay: '2s' }} />
+                <div className="absolute inset-0 z-0 opacity-40">
+                    <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
+                        <Suspense fallback={null}>
+                            <Particles count={700} />
+                        </Suspense>
+                    </Canvas>
+                </div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">

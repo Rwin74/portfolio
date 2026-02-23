@@ -1,6 +1,75 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { Code2, Palette, Globe, Terminal, Sparkles } from 'lucide-react';
+
+const TiltCard = ({ skill, variants }) => {
+    const ref = useRef(null);
+    const [isHover, setIsHover] = useState(false);
+
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseXSpring = useSpring(x);
+    const mouseYSpring = useSpring(y);
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["17.5deg", "-17.5deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-17.5deg", "17.5deg"]);
+
+    const handleMouseMove = (e) => {
+        if (!ref.current) return;
+        const rect = ref.current.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const xPct = mouseX / width - 0.5;
+        const yPct = mouseY / height - 0.5;
+        x.set(xPct);
+        y.set(yPct);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHover(false);
+        x.set(0);
+        y.set(0);
+    };
+
+    return (
+        <motion.div
+            variants={variants}
+            ref={ref}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={() => setIsHover(true)}
+            onMouseLeave={handleMouseLeave}
+            style={{
+                transformStyle: "preserve-3d",
+                rotateX,
+                rotateY,
+            }}
+            className="relative p-5 rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 hover:border-primary/50 transition-colors duration-300 group cursor-pointer"
+        >
+            <div
+                style={{
+                    transform: "translateZ(50px)",
+                    transformStyle: "preserve-3d"
+                }}
+            >
+                <div className="p-2 bg-white/5 rounded-lg w-fit text-gray-300 group-hover:text-primary transition-colors mb-3 group-hover:bg-primary/10 drop-shadow-lg">
+                    {skill.icon}
+                </div>
+                <h3 className="text-lg font-bold mb-1 text-white drop-shadow-md">{skill.title}</h3>
+                <p className="text-gray-500 text-xs drop-shadow-sm">{skill.desc}</p>
+            </div>
+            {/* Hologram Glare Overlay */}
+            <motion.div
+                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={{
+                    background: `radial-gradient(circle at ${isHover ? (x.get() + 0.5) * 100 : 50}% ${isHover ? (y.get() + 0.5) * 100 : 50}%, rgba(255,255,255,0.15) 0%, transparent 60%)`
+                }}
+            />
+        </motion.div>
+    );
+};
 
 const About = () => {
     const containerRef = useRef(null);
@@ -121,20 +190,12 @@ const About = () => {
                         </motion.div>
 
                         {/* Animated Grid for Skills */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div
+                            style={{ perspective: "1000px" }}
+                            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                        >
                             {skills.map((skill, index) => (
-                                <motion.div
-                                    key={index}
-                                    variants={itemVariants}
-                                    whileHover={{ y: -5, scale: 1.02 }}
-                                    className="p-5 rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 hover:border-primary/30 transition-all duration-300 group"
-                                >
-                                    <div className="p-2 bg-white/5 rounded-lg w-fit text-gray-300 group-hover:text-primary transition-colors mb-3 group-hover:bg-primary/10">
-                                        {skill.icon}
-                                    </div>
-                                    <h3 className="text-lg font-bold mb-1 text-white">{skill.title}</h3>
-                                    <p className="text-gray-500 text-xs">{skill.desc}</p>
-                                </motion.div>
+                                <TiltCard key={index} skill={skill} variants={itemVariants} />
                             ))}
                         </div>
                     </motion.div>
