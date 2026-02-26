@@ -1,5 +1,5 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
+import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const HeroParticles = lazy(() => import('./3d/HeroParticles'));
 
@@ -66,19 +66,31 @@ const SpotlightButton = ({ href, defaultText, revealText, isPrimary }) => {
 const Hero = () => {
     const { scrollY } = useScroll();
     const y2 = useTransform(scrollY, [0, 500], [0, -150]);
+    const sectionRef = useRef(null);
+    const [showParticles, setShowParticles] = useState(false);
+
+    useEffect(() => {
+        // Delay particles load to not block LCP
+        const timer = setTimeout(() => {
+            setShowParticles(true);
+        }, 1500);
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
-        <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20">
+        <section id="hero" ref={sectionRef} className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20">
 
             {/* Dynamic Background Elements - Cleaned up circles */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] animate-float opacity-30 mix-blend-screen" />
                 <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/10 rounded-full blur-[120px] animate-float opacity-20 mix-blend-screen" style={{ animationDelay: '2s' }} />
-                <div className="absolute inset-0 z-0 opacity-40">
-                    <Suspense fallback={null}>
-                        <HeroParticles />
-                    </Suspense>
-                </div>
+                {showParticles && (
+                    <div className="absolute inset-0 z-0 opacity-40">
+                        <Suspense fallback={null}>
+                            <HeroParticles />
+                        </Suspense>
+                    </div>
+                )}
             </div>
 
             <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
@@ -103,7 +115,7 @@ const Hero = () => {
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 2, duration: 1 }}
+                        transition={{ delay: 0.3, duration: 0.8 }}
                         className="text-lg md:text-xl text-gray-400 max-w-lg leading-relaxed mb-10 border-l-2 border-primary/50 pl-6"
                     >
                         Uzman Yazılım Geliştirici & Dijital Yönetim Uzmanı. Sürükleyici web deneyimleri oluşturmak için teknik hassasiyeti sanatsal vizyonla birleştiriyorum.
@@ -112,7 +124,7 @@ const Hero = () => {
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 2.2, duration: 1 }}
+                        transition={{ delay: 0.5, duration: 0.8 }}
                         className="flex flex-col sm:flex-row gap-4"
                     >
                         <SpotlightButton href="#projects" defaultText="Projelerimi Gör" revealText="Her Zaman" isPrimary={true} />
@@ -138,7 +150,9 @@ const Hero = () => {
                             alt="Atakan Yağlı - Uzman Yazılım Geliştirici ve Dijital Yönetim Uzmanı"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10000ms] group-hover:scale-105"
                             fetchPriority="high"
-                            decoding="async"
+                            decoding="sync"
+                            width="480"
+                            height="640"
                         />
 
                         {/* Floating Overlay Card */}

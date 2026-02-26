@@ -16,7 +16,10 @@ const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
   const [isMounted, setIsMounted] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  // Skip preloader on return visits within the same session
+  const [isLoading, setIsLoading] = useState(() => {
+    try { return !sessionStorage.getItem('preloader_shown'); } catch (e) { return true; }
+  });
   const [matrixMode, setMatrixMode] = useState(false);
 
   // Scroll Progress Implementation

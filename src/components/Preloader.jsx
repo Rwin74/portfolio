@@ -11,8 +11,10 @@ const Preloader = ({ onComplete }) => {
             setIsTypingComplete(true);
             setTimeout(() => {
                 onComplete();
-            }, 500); // Faster exit queue
-        }, text.length * 30 + 300); // 30ms typing duration + 300ms delay
+                // Mark as shown for this session
+                try { sessionStorage.setItem('preloader_shown', '1'); } catch (e) { }
+            }, 400);
+        }, text.length * 28 + 200); // slightly faster
 
         return () => clearTimeout(timer);
     }, [onComplete, text.length]);
@@ -22,8 +24,8 @@ const Preloader = ({ onComplete }) => {
             {!isTypingComplete && (
                 <motion.div
                     initial={{ opacity: 1 }}
-                    exit={{ opacity: 0, scale: 1.1, filter: "blur(5px)" }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    exit={{ opacity: 0, scale: 1.05, filter: "blur(4px)" }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
                     className="fixed inset-0 z-[9999] flex items-center justify-center bg-background"
                 >
                     <div className="font-mono text-2xl md:text-4xl font-bold flex">
@@ -33,7 +35,7 @@ const Preloader = ({ onComplete }) => {
                                 initial={{ opacity: 0, display: "none" }}
                                 animate={{ opacity: 1, display: "inline-block" }}
                                 transition={{
-                                    delay: index * 0.03, // 30ms delay instead of 100ms
+                                    delay: index * 0.028,
                                     duration: 0.05,
                                     type: "tween"
                                 }}
@@ -59,3 +61,4 @@ const Preloader = ({ onComplete }) => {
 };
 
 export default Preloader;
+

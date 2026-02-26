@@ -18,18 +18,39 @@ export default defineConfig({
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true
+        drop_debugger: true,
+        passes: 2
       }
     },
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom'],
-          'vendor-framer': ['framer-motion'],
-          'vendor-icons': ['lucide-react'],
-          'vendor-three': ['three', '@react-three/fiber', '@react-three/drei']
+        manualChunks(id) {
+          // Three.js and 3D - heaviest, load separately
+          if (id.includes('three') || id.includes('@react-three')) {
+            return 'vendor-three';
+          }
+          // Framer Motion
+          if (id.includes('framer-motion')) {
+            return 'vendor-framer';
+          }
+          // Icons - small but separate for caching
+          if (id.includes('lucide-react')) {
+            return 'vendor-icons';
+          }
+          // disable-devtool loads async, separate chunk
+          if (id.includes('disable-devtool')) {
+            return 'vendor-devtool';
+          }
+          // Core React - loads first
+          if (id.includes('react-dom')) {
+            return 'vendor-react-dom';
+          }
+          if (id.includes('/react/') || id.includes('react/index')) {
+            return 'vendor-react';
+          }
         }
       }
     }
   }
 })
+
