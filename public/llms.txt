@@ -14,3 +14,7 @@
 - E-posta: atakan7495@gmail.com
 - Telefon/WhatsApp: +90 544 721 89 74
 - Konum: Denizli, Türkiye
+
+## Görseller
+- Profil Fotoğrafı 1: `https://atakanyagli.com/sad.webp` (Atakan Yağlı - Uzman Yazılım Geliştirici ve Dijital Yönetim Uzmanı)
+- Profil Fotoğrafı 2: `https://atakanyagli.com/sad2.webp` (Atakan Yağlı)

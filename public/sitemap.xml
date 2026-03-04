@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://atakanyagli.com/</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-03-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://atakanyagli.com/sad.webp</image:loc>
+      <image:title>Atakan Yağlı - Uzman Yazılım Geliştirici ve Dijital Yönetim Uzmanı</image:title>
+      <image:caption>Atakan Yağlı Profil Fotoğrafı</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://atakanyagli.com/sad2.webp</image:loc>
+      <image:title>Atakan Yağlı - Tasarım &amp; Mühendislik</image:title>
+      <image:caption>Atakan Yağlı Hakkımda Profil Fotoğrafı</image:caption>
+    </image:image>
   </url>
 </urlset>
