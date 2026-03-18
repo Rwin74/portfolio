@@ -150,6 +150,7 @@ const Hero = () => {
                             alt="Atakan Yağlı - Uzman Yazılım Geliştirici ve Dijital Yönetim Uzmanı"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10000ms] group-hover:scale-105"
                             fetchPriority="high"
+                            loading="eager"
                             decoding="sync"
                             width="480"
                             height="640"
