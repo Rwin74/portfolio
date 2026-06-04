@@ -19,18 +19,7 @@ const Hero = () => {
             <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
                 {/* Text Content */}
                 <div className="text-left order-2 lg:order-1 pt-8 lg:pt-0">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/5 border border-white/10 text-sm text-primary mb-8 font-medium tracking-wide backdrop-blur-md"
-                    >
-                        <span className="relative flex h-2 w-2">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                        </span>
-                        {t.hero.badge}
-                    </motion.div>
+
                     
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
