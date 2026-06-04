@@ -139,7 +139,7 @@ const About = () => {
                                     <p className="text-gray-400 text-xs font-mono uppercase mb-1">Kod Adı</p>
                                     <p className="text-white font-bold flex items-center gap-2">
                                         <Sparkles className="w-4 h-4 text-primary" />
-                                        Dijital Zanaatkar
+                                        Teknoloji Üreticisi
                                     </p>
                                 </div>
                                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/50">
@@ -162,14 +162,14 @@ const About = () => {
                         </motion.span>
 
                         <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-                            Tasarım & Mühendislik <br className="hidden sm:block" />
+                            İnovasyon & Mühendislik <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-indigo-500">
-                                Arasındaki Köprü
+                                Odaklı Yaklaşım
                             </span>
                         </motion.h2>
 
                         <motion.p variants={itemVariants} className="text-gray-400 text-lg mb-8 leading-relaxed border-l-4 border-primary/30 pl-6">
-                            Sadece işlevsel değil, aynı zamanda görsel olarak da büyüleyici dijital deneyimler yaratma tutkusu olan bir yazılım geliştiricisiyim. Hem geliştirme hem de dijital yönetim alanındaki yılların deneyimiyle, her projeye benzersiz ve kusursuz bir bakış açısı getiriyorum.
+                            Pratik zorlukları yazılım, otomasyon ve yenilikçi ürün tasarımı aracılığıyla çözmeye odaklanan bir yazılım geliştirici ve teknoloji üreticisiyim. İleri düzey sistemler ve yapay zeka destekli çözümler geliştirerek gerçek dünya problemlerine ölçeklenebilir yanıtlar sunuyorum.
                         </motion.p>
 
                         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 sm:gap-8 mb-12">

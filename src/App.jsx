@@ -9,6 +9,7 @@ const MatrixRain = lazy(() => import('./components/MatrixRain'));
 
 const Campaign = lazy(() => import('./components/Campaign'));
 const Projects = lazy(() => import('./components/Projects'));
+const Timeline = lazy(() => import('./components/Timeline'));
 const About = lazy(() => import('./components/About'));
 const Estimator = lazy(() => import('./components/Estimator'));
 
@@ -104,6 +105,7 @@ function App() {
             <Suspense fallback={<div>Loading...</div>}>
               <Campaign />
               <Projects />
+              <Timeline />
               <About />
               <Estimator />
 
