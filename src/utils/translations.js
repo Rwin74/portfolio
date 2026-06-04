@@ -55,18 +55,16 @@ export const translations = {
                     year: "2024",
                     title: "Erken Yazılım Projeleri",
                     bullets: [
-                        "Web uygulamaları",
-                        "İlk bağımsız ürün denemeleri",
-                        "KampüsOdak"
+                        "KampüsOdak",
+                        "Erken yazılım projeleri"
                     ]
                 },
                 {
                     year: "2025",
-                    title: "Ürün Geliştirme",
+                    title: "Ürün Denemeleri",
                     bullets: [
-                        "Petigo",
                         "QR Smart Pet Tag",
-                        "Dijital platform fikirleri"
+                        "Ürün denemeleri"
                     ]
                 },
                 {
@@ -74,20 +72,17 @@ export const translations = {
                     title: "Araştırma ve Endüstriyel Sistemler",
                     bullets: [
                         "ResQ-72",
-                        "Industrial ERP & Warehouse System",
                         "Omni-Vital",
-                        "QR Warehouse Tracking"
+                        "Industrial ERP",
+                        "Biyo-Mercek",
+                        "Nefes-Ağ"
                     ]
                 },
                 {
-                    year: "2027+",
-                    title: "Loop Ecosystem & Future Technologies",
+                    year: "Gelecek",
+                    title: "Gelecek Hedefleri",
                     bullets: [
-                        "Emergency technologies",
-                        "Industrial automation",
-                        "Health tech",
-                        "Pet tech",
-                        "Future concepts"
+                        "Loop Technology ekosistem genişlemesi"
                     ]
                 }
             ]
@@ -315,18 +310,16 @@ export const translations = {
                     year: "2024",
                     title: "Early Software Projects",
                     bullets: [
-                        "Web applications",
-                        "First independent product trials",
-                        "KampüsOdak"
+                        "KampüsOdak",
+                        "Early software projects"
                     ]
                 },
                 {
                     year: "2025",
-                    title: "Product Development",
+                    title: "Product Experiments",
                     bullets: [
-                        "Petigo",
                         "QR Smart Pet Tag",
-                        "Digital platform concepts"
+                        "Product experiments"
                     ]
                 },
                 {
@@ -334,20 +327,17 @@ export const translations = {
                     title: "Research & Industrial Systems",
                     bullets: [
                         "ResQ-72",
-                        "Industrial ERP & Warehouse System",
                         "Omni-Vital",
-                        "QR Warehouse Tracking"
+                        "Industrial ERP",
+                        "Biyo-Mercek",
+                        "Nefes-Ağ"
                     ]
                 },
                 {
-                    year: "2027+",
-                    title: "Loop Ecosystem & Future Tech",
+                    year: "Future",
+                    title: "Future Goals",
                     bullets: [
-                        "Emergency technologies",
-                        "Industrial automation",
-                        "Health tech",
-                        "Pet tech",
-                        "Future concepts"
+                        "Loop Technology ecosystem expansion"
                     ]
                 }
             ]

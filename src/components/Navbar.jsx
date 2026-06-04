@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const BrandName = () => {
     const name = "AtakanYağlı";
     return (
         <a
-            href="#hero"
+            href="/"
             className="relative group cursor-pointer pointer-events-auto block"
             onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (window.location.pathname === '/') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
             }}
             aria-label="Atakan Yağlı Portfolyo - Ana Sayfaya Git"
         >
@@ -71,6 +74,8 @@ const Navbar = () => {
     const [hidden, setHidden] = useState(false);
     const { scrollY } = useScroll();
     const { t } = useLanguage();
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         const previous = scrollY.getPrevious();
@@ -83,6 +88,16 @@ const Navbar = () => {
 
     const handleScroll = (e, id) => {
         e.preventDefault();
+        if (location.pathname !== '/') {
+            navigate(`/#${id}`);
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }, 100);
+            return;
+        }
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: "smooth", block: "start" });
