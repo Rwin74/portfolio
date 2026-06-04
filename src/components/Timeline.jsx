@@ -6,23 +6,42 @@ const timelineData = [
     {
         year: "2024",
         title: "Erken Yazılım Projeleri",
-        description: "Temel yazılım sistemleri, web platformları ve ilk bağımsız projeler.",
+        bullets: [
+            "Web uygulamaları",
+            "İlk bağımsız ürün denemeleri",
+            "KampüsOdak"
+        ]
     },
     {
         year: "2025",
         title: "Ürün Geliştirme",
-        description: "Son kullanıcı odaklı dijital ürünler, SaaS çözümleri ve mobil uygulamalar.",
+        bullets: [
+            "Petigo",
+            "QR Smart Pet Tag",
+            "Dijital platform fikirleri"
+        ]
     },
     {
         year: "2026",
-        title: "İleri Teknoloji & Sistemler",
-        description: "ERP sistemleri, acil durum teknolojileri, endüstriyel otomasyon ve yapay zeka entegrasyonları.",
+        title: "Araştırma ve Endüstriyel Sistemler",
+        bullets: [
+            "ResQ-72",
+            "Industrial ERP & Warehouse System",
+            "Omni-Vital",
+            "QR Warehouse Tracking"
+        ],
         active: true
     },
     {
         year: "2027+",
-        title: "Gelecek Teknolojileri",
-        description: "Deneysel araştırma, otonom sistemler ve uzun vadeli teknoloji konseptleri.",
+        title: "Loop Ecosystem & Future Technologies",
+        bullets: [
+            "Emergency technologies",
+            "Industrial automation",
+            "Health tech",
+            "Pet tech",
+            "Future concepts"
+        ],
         isFuture: true
     }
 ];
@@ -49,12 +68,17 @@ const TimelineItem = ({ item, index }) => {
                     <span className={`inline-block px-3 py-1 mb-4 text-sm font-mono rounded-full border ${item.active ? 'border-primary/50 text-primary bg-primary/10' : (item.isFuture ? 'border-gray-700 text-gray-500 bg-gray-900/50' : 'border-white/20 text-white bg-white/5')}`}>
                         {item.year}
                     </span>
-                    <h3 className={`text-2xl font-bold mb-3 ${item.isFuture ? 'text-gray-400' : 'text-white'}`}>
+                    <h3 className={`text-2xl font-bold mb-4 tracking-tight ${item.isFuture ? 'text-gray-400' : 'text-white'}`}>
                         {item.title}
                     </h3>
-                    <p className={`leading-relaxed font-light ${item.isFuture ? 'text-gray-600' : 'text-gray-400'}`}>
-                        {item.description}
-                    </p>
+                    <ul className={`space-y-2 ${isEven ? 'md:inline-block md:text-right' : 'text-left'}`}>
+                        {item.bullets.map((bullet, bIdx) => (
+                            <li key={bIdx} className={`flex items-center gap-2 ${item.isFuture ? 'text-gray-600' : 'text-gray-400'} ${isEven ? 'md:flex-row-reverse' : ''}`}>
+                                <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${item.isFuture ? 'bg-gray-700' : 'bg-primary/50'}`} />
+                                <span className="font-light">{bullet}</span>
+                            </li>
+                        ))}
+                    </ul>
                     
                     {/* Active glow */}
                     {item.active && (

@@ -8,11 +8,11 @@ import CustomCursor from './components/CustomCursor';
 const MatrixRain = lazy(() => import('./components/MatrixRain'));
 
 const Campaign = lazy(() => import('./components/Campaign'));
+const FeaturedProjects = lazy(() => import('./components/FeaturedProjects'));
 const Projects = lazy(() => import('./components/Projects'));
 const Timeline = lazy(() => import('./components/Timeline'));
 const About = lazy(() => import('./components/About'));
 const Estimator = lazy(() => import('./components/Estimator'));
-
 const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
@@ -104,6 +104,7 @@ function App() {
           {isMounted && (
             <Suspense fallback={<div>Loading...</div>}>
               <Campaign />
+              <FeaturedProjects />
               <Projects />
               <Timeline />
               <About />
