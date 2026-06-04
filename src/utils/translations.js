@@ -92,6 +92,41 @@ export const translations = {
                 }
             ]
         },
+        loop: {
+            title: "Loop Technology",
+            subtitle: "Building technologies for resilience, automation and human impact.",
+            description: "Loop Technology, gerçek dünya problemlerini çözmek için yazılım, yapay zeka, otomasyon ve derin teknoloji projeleri geliştirmeyi amaçlayan bağımsız bir teknoloji girişimidir.",
+            visionTitle: "Vision",
+            visionText1: "Teknolojinin yalnızca yazılım üretmek için değil, insanların günlük hayatta karşılaştığı gerçek problemlere çözüm üretmek için kullanılabileceğine inanıyorum.",
+            visionText2: "Loop Technology; afet teknolojileri, yapay zeka, sağlık teknolojileri, endüstriyel sistemler ve dijital ürünler alanlarında uzun vadeli projeler geliştirmeyi hedefleyen bir teknoloji ekosistemidir.",
+            focusAreas: [
+                {
+                    title: "Emergency Technologies",
+                    projects: ["ResQ-72"],
+                    desc: "Afet sonrası iletişim ve dayanıklılık sistemleri."
+                },
+                {
+                    title: "Industrial Systems",
+                    projects: ["Industrial ERP & Warehouse System"],
+                    desc: "Üretim, stok ve operasyon süreçlerini dijitalleştiren sistemler."
+                },
+                {
+                    title: "Health Technologies",
+                    projects: ["Omni-Vital", "Biyo-Mercek", "Nefes-Ağ"],
+                    desc: "Bilgisayarlı görü, biyobelirteç analizi ve sağlık teknolojileri araştırmaları."
+                },
+                {
+                    title: "Pet Technologies",
+                    projects: ["QR Smart Pet Tag"],
+                    desc: "Evcil hayvan güvenliği ve dijital kimlik sistemleri."
+                },
+                {
+                    title: "Digital Products",
+                    projects: ["KampüsOdak"],
+                    desc: "Topluluk ve verimlilik odaklı dijital platformlar."
+                }
+            ]
+        },
         projects: {
             title: "Projeler",
             description: "Pratik sorunları çözen teknoloji ürünleri, endüstriyel sistemler ve araştırma konseptleri.",
@@ -314,6 +349,41 @@ export const translations = {
                         "Pet tech",
                         "Future concepts"
                     ]
+                }
+            ]
+        },
+        loop: {
+            title: "Loop Technology",
+            subtitle: "Building technologies for resilience, automation and human impact.",
+            description: "Loop Technology is an independent technology venture aimed at developing software, AI, automation, and deep tech projects to solve real-world problems.",
+            visionTitle: "Vision",
+            visionText1: "I believe technology should be used not just to produce software, but to create solutions for the real problems people face in their daily lives.",
+            visionText2: "Loop Technology is a technology ecosystem aiming to develop long-term projects in emergency technologies, AI, health tech, industrial systems, and digital products.",
+            focusAreas: [
+                {
+                    title: "Emergency Technologies",
+                    projects: ["ResQ-72"],
+                    desc: "Post-disaster communication and resilience systems."
+                },
+                {
+                    title: "Industrial Systems",
+                    projects: ["Industrial ERP & Warehouse System"],
+                    desc: "Systems digitalizing production, inventory, and operational processes."
+                },
+                {
+                    title: "Health Technologies",
+                    projects: ["Omni-Vital", "Biyo-Mercek", "Nefes-Ağ"],
+                    desc: "Computer vision, biomarker analysis, and health technology research."
+                },
+                {
+                    title: "Pet Technologies",
+                    projects: ["QR Smart Pet Tag"],
+                    desc: "Pet safety and digital identity systems."
+                },
+                {
+                    title: "Digital Products",
+                    projects: ["KampüsOdak"],
+                    desc: "Community and productivity-focused digital platforms."
                 }
             ]
         },
