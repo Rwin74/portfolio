@@ -107,6 +107,7 @@ const Navbar = () => {
                 <nav className="order-last md:order-none w-full md:w-auto pointer-events-auto bg-white/5 border border-white/10 rounded-full px-3 md:px-6 py-2 md:py-3 flex justify-center gap-3 md:gap-6 items-center shadow-lg backdrop-blur-md">
                     <a href="#hero" onClick={(e) => handleScroll(e, 'hero')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">{t.nav.home}</a>
                     <a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">{t.nav.projects}</a>
+                    <a href="#loop" onClick={(e) => handleScroll(e, 'loop')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">{t.nav.loop}</a>
                     <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">{t.nav.about}</a>
                     <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">{t.nav.contact}</a>
                 </nav>

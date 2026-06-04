@@ -31,6 +31,15 @@ const Hero = () => {
                         </span>
                         {t.hero.badge}
                     </motion.div>
+                    
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                        className="text-lg md:text-xl text-gray-300 font-medium mb-4"
+                    >
+                        {t.hero.subtitle}
+                    </motion.div>
 
                     <motion.h1 
                         initial={{ opacity: 0, y: 20 }}
@@ -46,10 +55,33 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed mb-10 font-light"
+                        className="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed mb-8 font-light"
                     >
                         {t.hero.description}
                     </motion.p>
+
+                    {/* Loop Brand Card */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.35, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                        className="mb-10 p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md max-w-xl"
+                    >
+                        <div className="flex items-center gap-3 mb-3">
+                            <img src="/images/loop-logo.webp" alt="Loop Technology Logo" className="w-8 h-8 object-contain" />
+                            <h3 className="text-white font-semibold tracking-wide">{t.hero.loopCard.title}</h3>
+                        </div>
+                        <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                            {t.hero.loopCard.desc}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                            {t.hero.loopCard.focusAreas.map((area, idx) => (
+                                <span key={idx} className="text-xs px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                                    {area}
+                                </span>
+                            ))}
+                        </div>
+                    </motion.div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

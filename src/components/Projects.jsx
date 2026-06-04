@@ -44,6 +44,13 @@ const ProjectModal = ({ project, onClose }) => {
                                 {project.status}
                             </span>
                         </div>
+                        
+                        <div className="absolute top-6 right-6 z-10">
+                            <a href="#loop" onClick={onClose} className="px-4 py-1.5 text-xs font-semibold bg-primary/20 text-primary border border-primary/30 rounded-full shadow-sm backdrop-blur-md hover:bg-primary/30 transition-colors flex items-center gap-2">
+                                <img src="/images/loop-logo.webp" alt="Loop" className="w-3 h-3" />
+                                {t.projects.modal.partOfLoop}
+                            </a>
+                        </div>
                     </div>
 
                     <div className="p-6 sm:p-10 space-y-10 relative z-10 -mt-10">

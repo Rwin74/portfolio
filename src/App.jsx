@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Preloader from './components/Preloader';
 import { LanguageProvider } from './context/LanguageContext';
 const Projects = lazy(() => import('./components/Projects'));
+const Loop = lazy(() => import('./components/Loop'));
 const Timeline = lazy(() => import('./components/Timeline'));
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -50,6 +51,7 @@ function App() {
           {isMounted && (
             <Suspense fallback={<div>Loading...</div>}>
               <Projects />
+              <Loop />
               <Timeline />
               <About />
               <Contact />

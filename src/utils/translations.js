@@ -3,22 +3,38 @@ export const translations = {
         nav: {
             home: "Ana Sayfa",
             projects: "Projeler",
+            loop: "Loop",
             about: "Hakkımda",
             contact: "İletişim"
         },
         hero: {
             badge: "Teknoloji Geliştirici & Ürün İnovatörü",
+            subtitle: "Founder of Loop Technology",
             titleLine1: "Gerçek dünya zorlukları için",
             titleLine2: "teknoloji inşa ediyorum.",
             description: "Pratik sorunları çözmek için tasarlanmış yazılım, yapay zeka sistemleri, endüstriyel otomasyon ve teknoloji odaklı ürünler.",
             btnProjects: "Projeleri İncele",
-            btnContact: "İletişime Geç"
+            btnContact: "İletişime Geç",
+            loopCard: {
+                title: "Loop Technology",
+                desc: "Afet teknolojileri, yapay zeka sistemleri, endüstriyel yazılımlar ve geleceğin dijital ürünleri üzerine odaklanan bağımsız teknoloji girişimi.",
+                focusAreas: [
+                    "Emergency Technologies",
+                    "Industrial Systems",
+                    "Health Technologies",
+                    "Pet Technologies",
+                    "Digital Products"
+                ]
+            }
         },
         about: {
-            badge: "Hakkımda",
+            badge: "Founder",
             titleLine1: "İnovasyon & Mühendislik",
             titleLine2: "Odaklı Yaklaşım",
-            description: "Pratik zorlukları yazılım, otomasyon ve yenilikçi ürün tasarımı aracılığıyla çözmeye odaklanan bir yazılım geliştirici ve teknoloji üreticisiyim. İleri düzey sistemler ve yapay zeka destekli çözümler geliştirerek gerçek dünya problemlerine ölçeklenebilir yanıtlar sunuyorum.",
+            description: "Bilgisayar Programcılığı öğrencisi olarak başladığım yolculukta, yazılım geliştirme, yapay zeka sistemleri, endüstriyel otomasyon ve teknoloji odaklı ürünler üzerine çalışıyorum. Amacım yalnızca uygulamalar geliştirmek değil; gerçek dünya problemlerine ölçeklenebilir teknolojik çözümler üretmek.",
+            roleBadge1: "Software Developer",
+            roleBadge2: "Product Builder",
+            roleBadge3: "Founder of Loop Technology",
             expYears: "Yıllık Deneyim",
             expProjects: "Başarılı Proje",
             expDedication: "Proje Adanmışlığı",
@@ -29,7 +45,7 @@ export const translations = {
                 { title: "Mimari", desc: "Ölçeklenebilir Sistemler" }
             ],
             codename: "Kod Adı",
-            role: "Teknoloji Üreticisi"
+            role: "Founder of Loop Technology"
         },
         timeline: {
             title: "Evrim Süreci",
@@ -86,7 +102,8 @@ export const translations = {
                 techStack: "Teknoloji Yığını",
                 status: "Durum",
                 impact: "Etki",
-                nextStep: "Sonraki Hedef"
+                nextStep: "Sonraki Hedef",
+                partOfLoop: "Bu proje Loop Technology ekosisteminin bir parçasıdır."
             },
             items: [
                 {
@@ -211,22 +228,38 @@ export const translations = {
         nav: {
             home: "Home",
             projects: "Projects",
+            loop: "Loop",
             about: "About",
             contact: "Contact"
         },
         hero: {
             badge: "Tech Builder & Product Innovator",
+            subtitle: "Founder of Loop Technology",
             titleLine1: "Building technology for",
             titleLine2: "real-world challenges.",
             description: "Software, AI systems, industrial automation, and technology-driven products designed to solve practical problems.",
             btnProjects: "Explore Projects",
-            btnContact: "Get in Touch"
+            btnContact: "Get in Touch",
+            loopCard: {
+                title: "Loop Technology",
+                desc: "Independent technology venture focused on emergency technologies, AI systems, industrial software and digital products.",
+                focusAreas: [
+                    "Emergency Technologies",
+                    "Industrial Systems",
+                    "Health Technologies",
+                    "Pet Technologies",
+                    "Digital Products"
+                ]
+            }
         },
         about: {
-            badge: "About Me",
+            badge: "Founder",
             titleLine1: "Innovation & Engineering",
             titleLine2: "Driven Approach",
-            description: "I am a software developer and tech builder focused on solving practical challenges through software, automation, and innovative product design. I provide scalable responses to real-world problems by developing advanced systems and AI-powered solutions.",
+            description: "Starting my journey as a Computer Programming student, I work on software development, AI systems, industrial automation, and technology-driven products. My goal isn't just developing apps; it's creating scalable technological solutions to real-world problems.",
+            roleBadge1: "Software Developer",
+            roleBadge2: "Product Builder",
+            roleBadge3: "Founder of Loop Technology",
             expYears: "Years Exp.",
             expProjects: "Projects",
             expDedication: "Dedication",
@@ -237,7 +270,7 @@ export const translations = {
                 { title: "Architecture", desc: "Scalable Systems" }
             ],
             codename: "Codename",
-            role: "Tech Builder"
+            role: "Founder of Loop Technology"
         },
         timeline: {
             title: "Evolution",
@@ -294,7 +327,8 @@ export const translations = {
                 techStack: "Tech Stack",
                 status: "Status",
                 impact: "Impact",
-                nextStep: "Next Steps"
+                nextStep: "Next Steps",
+                partOfLoop: "This project is part of the Loop Technology ecosystem."
             },
             items: [
                 {

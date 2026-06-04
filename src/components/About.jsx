@@ -131,21 +131,17 @@ const About = () => {
                             {t.about.description}
                         </motion.p>
 
-                        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 sm:gap-8 mb-12">
-                            <div className="flex flex-col">
-                                <span className="text-4xl lg:text-5xl font-bold text-white mb-2">5+</span>
-                                <span className="text-sm tracking-widest text-gray-500 uppercase" dangerouslySetInnerHTML={{ __html: t.about.expYears.replace(' ', '<br/>') }}></span>
-                            </div>
-                            <div className="hidden sm:block w-px bg-white/10"></div>
-                            <div className="flex flex-col">
-                                <span className="text-4xl lg:text-5xl font-bold text-white mb-2">50+</span>
-                                <span className="text-sm tracking-widest text-gray-500 uppercase" dangerouslySetInnerHTML={{ __html: t.about.expProjects.replace(' ', '<br/>') }}></span>
-                            </div>
-                            <div className="hidden sm:block w-px bg-white/10"></div>
-                            <div className="flex flex-col">
-                                <span className="text-4xl lg:text-5xl font-bold text-white mb-2">%100</span>
-                                <span className="text-sm tracking-widest text-gray-500 uppercase" dangerouslySetInnerHTML={{ __html: t.about.expDedication.replace(' ', '<br/>') }}></span>
-                            </div>
+                        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-12 mt-4">
+                            <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium">
+                                {t.about.roleBadge1}
+                            </span>
+                            <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium">
+                                {t.about.roleBadge2}
+                            </span>
+                            <span className="px-4 py-2 rounded-full bg-primary/20 border border-primary/30 text-primary text-sm font-semibold flex items-center gap-2">
+                                <img src="/images/loop-logo.webp" alt="Loop" className="w-4 h-4" />
+                                {t.about.roleBadge3}
+                            </span>
                         </motion.div>
 
                         {/* Animated Grid for Skills */}
