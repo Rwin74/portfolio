@@ -99,7 +99,7 @@ export const translations = {
                     techStack: ["LoRa", "Mesh Network", "IoT", "PWA", "Simulation", "Emergency Communication", "Data Packet Design"],
                     impact: "Afet sonrası altyapıdan bağımsız iletişim modeli üzerine araştırma ve prototip çalışması.",
                     nextStep: "Küçük ölçekli saha testi, teknik whitepaper ve yarışma başvurusu için sunum dosyası hazırlanması.",
-                    image: "/images/project-1.png",
+                    image: "/images/project-1.webp",
                     extraSections: []
                 },
                 {
@@ -112,7 +112,7 @@ export const translations = {
                     techStack: ["Next.js", "Supabase", "PostgreSQL", "QR Code", "Inventory Management", "Dashboard", "Role Based Access"],
                     impact: "Üretim ve depo süreçlerinde görünürlük, hız ve hata azaltma hedefi.",
                     nextStep: "Depo modülü, QR okutma akışı, stok hareket geçmişi ve yönetici panelinin tamamlanması.",
-                    image: "/images/project-2.png",
+                    image: "/images/project-2.webp",
                     extraSections: []
                 },
                 {
@@ -125,7 +125,7 @@ export const translations = {
                     techStack: ["Firebase", "QR Code", "Location Sharing", "Email Notification", "Web App", "Pet Safety"],
                     impact: "Kayıp hayvanların daha hızlı bulunmasını sağlayabilecek düşük maliyetli sistem.",
                     nextStep: "Veteriner ve petshop iş ortakları için pilot dağıtım modeli hazırlanması.",
-                    image: "/images/project-3.png",
+                    image: "/images/project-3.webp",
                     extraSections: []
                 },
                 {
@@ -138,7 +138,7 @@ export const translations = {
                     techStack: ["React", "Node.js", "MongoDB", "Web App", "Real-Time Features"],
                     impact: "Öğrenciler için dijital çalışma ve odaklanma deneyimi sunan yayında bir web uygulaması.",
                     nextStep: "Kullanıcı deneyimini geliştirmek, SEO görünürlüğünü artırmak ve öğrenci topluluğu oluşturmak.",
-                    image: "/images/project-4.png",
+                    image: "/images/project-4.webp",
                     extraSections: []
                 },
                 {
@@ -151,7 +151,7 @@ export const translations = {
                     techStack: ["Python", "OpenCV", "Computer Vision", "Signal Processing", "Face Detection", "Health Tech"],
                     impact: "Cihazsız temel vital analiz üzerine deneysel çalışma.",
                     nextStep: "Daha kararlı ölçüm, gerçek zamanlı arayüz ve doğruluk testi yapılması.",
-                    image: "/images/project-5.png",
+                    image: "/images/project-5.webp",
                     extraSections: []
                 },
                 {
@@ -164,7 +164,7 @@ export const translations = {
                     techStack: ["OpenCV", "Computational Photography", "Focus Stacking", "Focus Peaking", "TensorFlow Lite", "CoreML", "Computer Vision", "Mobile AI", "PDMS Lens", "Microscopy"],
                     impact: "Laboratuvar erişiminin kısıtlı olduğu bölgelerde düşük maliyetli ve taşınabilir analiz yaklaşımı.",
                     nextStep: "Lazer merceği ile ilk mobil kamera büyütme testi, OpenCV tabanlı odak tespit demo uygulaması ve örnek görüntü analiz akışı hazırlanması.",
-                    image: "/images/project-6.png",
+                    image: "/images/project-6.webp",
                     extraSections: [
                         { title: "Donanım Yaklaşımı", content: "PDMS veya benzeri şeffaf polimer damla mercek kullanımı hedeflenir. MVP aşamasında lazer işaretleyici içinden çıkan küçük odak merceği ile telefon kamerası üzerinde proof of concept testleri yapılabilir." },
                         { title: "Yazılım Yaklaşımı", content: "OpenCV ile gerçek zamanlı odak tespiti, Laplace operatörüyle keskinlik analizi, focus stacking ile farklı derinliklerden gelen net alanların birleştirilmesi ve TensorFlow Lite/CoreML ile cihaz içi analiz." },
@@ -181,7 +181,7 @@ export const translations = {
                     techStack: ["Python", "Librosa", "STFT", "MFCC", "Spectrogram", "CNN", "TensorFlow Lite", "ONNX", "Audio AI", "Edge AI", "Telemedicine"],
                     impact: "Telefon mikrofonunu düşük maliyetli bir akustik ön tarama aracına dönüştürmeyi hedefleyen araştırma projesi.",
                     nextStep: "Coughvid veya Coswara gibi açık veri setleriyle ilk spektrogram üretimi, basit CNN modeli eğitimi ve demo arayüz hazırlanması.",
-                    image: "/images/project-7.png",
+                    image: "/images/project-7.webp",
                     extraSections: [
                         { title: "Matematiksel Yaklaşım", content: "Ham ses sinyali STFT ve MFCC gibi yöntemlerle zaman-frekans temsiline dönüştürülür. Böylece öksürük sesi 2 boyutlu spektrogram görseli haline gelir." },
                         { title: "Yapay Zeka Yaklaşımı", content: "Spektrogramlar MobileNetV2, ResNet veya benzeri CNN modelleri ile sınıflandırılır. Mobil cihazlarda TensorFlow Lite veya ONNX ile edge AI analizi hedeflenir." },
@@ -307,7 +307,7 @@ export const translations = {
                     techStack: ["LoRa", "Mesh Network", "IoT", "PWA", "Simulation", "Emergency Communication", "Data Packet Design"],
                     impact: "Research and prototype study on infrastructure-independent communication models post-disaster.",
                     nextStep: "Small-scale field testing, technical whitepaper preparation, and pitch deck creation for competition applications.",
-                    image: "/images/project-1.png",
+                    image: "/images/project-1.webp",
                     extraSections: []
                 },
                 {
@@ -320,7 +320,7 @@ export const translations = {
                     techStack: ["Next.js", "Supabase", "PostgreSQL", "QR Code", "Inventory Management", "Dashboard", "Role Based Access"],
                     impact: "Aiming to increase visibility, speed, and reduce errors in production and warehouse processes.",
                     nextStep: "Completing the warehouse module, QR scanning flow, stock movement history, and admin panel.",
-                    image: "/images/project-2.png",
+                    image: "/images/project-2.webp",
                     extraSections: []
                 },
                 {
@@ -333,7 +333,7 @@ export const translations = {
                     techStack: ["Firebase", "QR Code", "Location Sharing", "Email Notification", "Web App", "Pet Safety"],
                     impact: "A low-cost system that enables faster recovery of lost animals.",
                     nextStep: "Preparing a pilot distribution model for veterinary and petshop partners.",
-                    image: "/images/project-3.png",
+                    image: "/images/project-3.webp",
                     extraSections: []
                 },
                 {
@@ -346,7 +346,7 @@ export const translations = {
                     techStack: ["React", "Node.js", "MongoDB", "Web App", "Real-Time Features"],
                     impact: "A live web application providing a digital study and focus experience for students.",
                     nextStep: "Improving user experience, increasing SEO visibility, and building a student community.",
-                    image: "/images/project-4.png",
+                    image: "/images/project-4.webp",
                     extraSections: []
                 },
                 {
@@ -359,7 +359,7 @@ export const translations = {
                     techStack: ["Python", "OpenCV", "Computer Vision", "Signal Processing", "Face Detection", "Health Tech"],
                     impact: "Experimental study on device-free basic vital analysis.",
                     nextStep: "Achieving more stable measurements, building a real-time interface, and conducting accuracy tests.",
-                    image: "/images/project-5.png",
+                    image: "/images/project-5.webp",
                     extraSections: []
                 },
                 {
@@ -372,7 +372,7 @@ export const translations = {
                     techStack: ["OpenCV", "Computational Photography", "Focus Stacking", "Focus Peaking", "TensorFlow Lite", "CoreML", "Computer Vision", "Mobile AI", "PDMS Lens", "Microscopy"],
                     impact: "A low-cost and portable analysis approach for regions with limited access to laboratories.",
                     nextStep: "Initial mobile camera magnification tests with a laser lens, developing an OpenCV-based focus detection demo, and preparing a sample image analysis flow.",
-                    image: "/images/project-6.png",
+                    image: "/images/project-6.webp",
                     extraSections: [
                         { title: "Hardware Approach", content: "Aiming to use a PDMS or similar transparent polymer drop lens. In the MVP phase, proof of concept tests can be conducted on the phone camera using a small focus lens extracted from a laser pointer." },
                         { title: "Software Approach", content: "Real-time focus detection with OpenCV, sharpness analysis via the Laplace operator, combining in-focus areas from different depths with focus stacking, and on-device analysis with TensorFlow Lite/CoreML." },
@@ -389,7 +389,7 @@ export const translations = {
                     techStack: ["Python", "Librosa", "STFT", "MFCC", "Spectrogram", "CNN", "TensorFlow Lite", "ONNX", "Audio AI", "Edge AI", "Telemedicine"],
                     impact: "A research project aiming to transform the phone microphone into a low-cost acoustic pre-screening tool.",
                     nextStep: "Initial spectrogram generation using open datasets like Coughvid or Coswara, training a basic CNN model, and preparing a demo interface.",
-                    image: "/images/project-7.png",
+                    image: "/images/project-7.webp",
                     extraSections: [
                         { title: "Mathematical Approach", content: "The raw audio signal is converted into a time-frequency representation using methods like STFT and MFCC. Thus, the cough sound becomes a 2D spectrogram image." },
                         { title: "AI Approach", content: "Spectrograms are classified using CNN models like MobileNetV2, ResNet, etc. Edge AI analysis is targeted on mobile devices using TensorFlow Lite or ONNX." },
