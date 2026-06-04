@@ -1,34 +1,17 @@
-import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-
-const HeroParticles = lazy(() => import('./3d/HeroParticles'));
 
 const Hero = () => {
     const { scrollY } = useScroll();
     const y2 = useTransform(scrollY, [0, 500], [0, -100]);
     const sectionRef = useRef(null);
-    const [showParticles, setShowParticles] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowParticles(true);
-        }, 1500);
-        return () => clearTimeout(timer);
-    }, []);
 
     return (
         <section id="hero" ref={sectionRef} className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20">
             {/* Clean Background Elements */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-20%] left-[20%] w-[60%] h-[60%] bg-primary/10 rounded-full blur-[150px] opacity-20 mix-blend-screen" />
-                {showParticles && (
-                    <div className="absolute inset-0 z-0 opacity-20">
-                        <Suspense fallback={null}>
-                            <HeroParticles />
-                        </Suspense>
-                    </div>
-                )}
             </div>
 
             <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
@@ -76,7 +59,7 @@ const Hero = () => {
                             href="#projects" 
                             className="group flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white text-black font-semibold transition-all duration-300 hover:bg-gray-200"
                         >
-                            Laboratuvarları İncele
+                            Projeleri İncele
                             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                         </a>
                         <a 

@@ -2,13 +2,8 @@ import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import BlueprintToggle from './components/BlueprintToggle';
 import Preloader from './components/Preloader';
-import CustomCursor from './components/CustomCursor';
-const MatrixRain = lazy(() => import('./components/MatrixRain'));
 
-const Campaign = lazy(() => import('./components/Campaign'));
-const FeaturedProjects = lazy(() => import('./components/FeaturedProjects'));
 const Projects = lazy(() => import('./components/Projects'));
 const Timeline = lazy(() => import('./components/Timeline'));
 const About = lazy(() => import('./components/About'));
@@ -21,7 +16,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(() => {
     try { return !sessionStorage.getItem('preloader_shown'); } catch (e) { return true; }
   });
-  const [matrixMode, setMatrixMode] = useState(false);
 
   // Scroll Progress Implementation
   const { scrollYProgress } = useScroll();
@@ -33,56 +27,14 @@ function App() {
 
   useEffect(() => {
     setIsMounted(true);
-    if (!isLoading) {
-      document.body.style.overflow = matrixMode ? 'hidden' : 'auto';
-    } else {
+    if (isLoading) {
       document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
     }
-  }, [isLoading, matrixMode]);
+  }, [isLoading]);
 
-  useEffect(() => {
-    let keyBuffer = '';
-    let idleTimer;
 
-    const resetIdleTimer = () => {
-      clearTimeout(idleTimer);
-      if (!isLoading && !matrixMode) {
-        idleTimer = setTimeout(() => {
-          setMatrixMode(true);
-        }, 120000); // Trigger after 2 minutes of idle time instead of 30s to avoid annoying users
-      }
-    };
-
-    const handleKeyDown = (e) => {
-      keyBuffer += e.key.toLowerCase();
-      if (keyBuffer.length > 6) {
-        keyBuffer = keyBuffer.slice(-6);
-      }
-      if (keyBuffer === 'hacker') {
-        setMatrixMode(true);
-      }
-      resetIdleTimer();
-    };
-
-    const handleUserActivity = () => {
-      resetIdleTimer();
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('mousemove', handleUserActivity);
-    window.addEventListener('click', handleUserActivity);
-    window.addEventListener('scroll', handleUserActivity);
-
-    resetIdleTimer();
-
-    return () => {
-      clearTimeout(idleTimer);
-      window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('mousemove', handleUserActivity);
-      window.removeEventListener('click', handleUserActivity);
-      window.removeEventListener('scroll', handleUserActivity);
-    };
-  }, [isLoading, matrixMode]);
 
   return (
     <>
@@ -90,12 +42,7 @@ function App() {
         className="fixed top-0 left-0 right-0 h-1 bg-primary z-[100000] origin-left drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]"
         style={{ scaleX }}
       />
-      {matrixMode && (
-        <Suspense fallback={null}>
-          <MatrixRain active={matrixMode} onClose={() => setMatrixMode(false)} />
-        </Suspense>
-      )}
-      <CustomCursor />
+
       {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
       <div className={`bg-background min-h-screen text-foreground selection:bg-primary selection:text-white transition-opacity duration-1000 ${isLoading ? 'h-screen overflow-hidden' : ''}`}>
         <Navbar />
@@ -103,8 +50,6 @@ function App() {
           <Hero />
           {isMounted && (
             <Suspense fallback={<div>Loading...</div>}>
-              <Campaign />
-              <FeaturedProjects />
               <Projects />
               <Timeline />
               <About />
@@ -114,7 +59,6 @@ function App() {
             </Suspense>
           )}
         </main>
-        <BlueprintToggle />
       </div>
     </>
   );

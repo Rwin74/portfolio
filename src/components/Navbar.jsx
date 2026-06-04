@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import Magnetic from './Magnetic';
-
 const BrandName = () => {
     const name = "AtakanYağlı";
     return (
-        <Magnetic>
             <a
                 href="#hero"
                 className="relative group cursor-pointer pointer-events-auto block"
@@ -44,7 +41,6 @@ const BrandName = () => {
                     <span className="text-primary transition-transform group-hover:translate-x-1 duration-300">/&gt;</span>
                 </motion.div>
             </a>
-        </Magnetic>
     );
 };
 
@@ -82,10 +78,10 @@ const Navbar = () => {
             <BrandName />
 
             <nav className="pointer-events-auto bg-white/5 border border-white/10 rounded-full px-3 md:px-6 py-2 md:py-3 flex gap-3 md:gap-6 items-center shadow-lg backdrop-blur-md">
-                <Magnetic><a href="#hero" onClick={(e) => handleScroll(e, 'hero')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Ana Sayfa</a></Magnetic>
-                <Magnetic><a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Projeler</a></Magnetic>
-                <Magnetic><a href="#about" onClick={(e) => handleScroll(e, 'about')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Hakkımda</a></Magnetic>
-                <Magnetic><a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">İletişim</a></Magnetic>
+                <a href="#hero" onClick={(e) => handleScroll(e, 'hero')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Ana Sayfa</a>
+                <a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Projeler</a>
+                <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">Hakkımda</a>
+                <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">İletişim</a>
             </nav>
 
             {/* Empty div for balancing if needed, or maybe a small CTA later */}
