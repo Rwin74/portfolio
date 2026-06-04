@@ -85,81 +85,109 @@ export const translations = {
                 solution: "Çözüm",
                 techStack: "Teknoloji Yığını",
                 status: "Durum",
-                devProcess: "Geliştirme Süreci",
-                futurePlans: "Gelecek Planları"
+                impact: "Etki",
+                nextStep: "Sonraki Hedef"
             },
             items: [
                 {
-                    id: "resq",
+                    id: "resq-72",
                     title: "ResQ-72",
                     status: "Araştırma / Prototip",
                     shortDescription: "Afet sonrası ilk 72 saat içinde GSM ve internet altyapısı çalışmasa bile temel mesajlaşma ve konum paylaşımı sağlamayı hedefleyen mesh tabanlı acil iletişim sistemi.",
                     problem: "Deprem ve afetlerde baz istasyonları, internet ve elektrik altyapısı devre dışı kalabiliyor. İlk 72 saatte vatandaşların konum ve durum bilgisi iletememesi arama-kurtarma süreçlerini zorlaştırıyor.",
-                    solution: "Düşük bant genişlikli mesajlaşma, LoRa/mesh haberleşme mantığı, kısa veri paketleri, önceliklendirilmiş acil durum mesajları ve ekip-vatandaş iletişimi.",
-                    devProcess: "Sistem mimarisi tasarlandı. Haberleşme protokolü üzerine araştırmalar ve temel ağ simülasyonları gerçekleştiriliyor.",
-                    futurePlans: "Prototipin saha koşullarında menzil ve paket iletim testlerinin yapılması.",
-                    techStack: ["LoRa", "Mesh Network", "IoT", "PWA", "Simulation"],
-                    image: "/project-4.webp"
+                    solution: "Düşük bant genişlikli mesajlaşma, mesh haberleşme mantığı, kısa veri paketleri, önceliklendirilmiş acil durum mesajları ve ekip-vatandaş iletişimi.",
+                    techStack: ["LoRa", "Mesh Network", "IoT", "PWA", "Simulation", "Emergency Communication", "Data Packet Design"],
+                    impact: "Afet sonrası altyapıdan bağımsız iletişim modeli üzerine araştırma ve prototip çalışması.",
+                    nextStep: "Küçük ölçekli saha testi, teknik whitepaper ve yarışma başvurusu için sunum dosyası hazırlanması.",
+                    image: "/images/project-1.png",
+                    extraSections: []
                 },
                 {
-                    id: "erp",
+                    id: "industrial-erp",
                     title: "Industrial ERP & Warehouse System",
                     status: "Geliştirmede",
                     shortDescription: "Üretim yapan işletmeler için depo, stok, ürün, malzeme, sipariş ve üretim takibini dijitalleştiren ERP sistemi.",
                     problem: "Depo düzeni, stok takibi, malzeme giriş-çıkışı, ölçü farklılıkları ve üretim süreçleri manuel takip edildiğinde hata riski artıyor.",
                     solution: "QR kodlu ürün ve raf takibi, stok hareketleri, depo haritası, ürün reçetesi, malzeme geçmişi, kullanıcı rolleri ve raporlama sistemi.",
-                    devProcess: "Temel modüller (stok, QR eşleştirme, kullanıcı yetkileri) kodlandı. MVP sürümü oluşturuluyor.",
-                    futurePlans: "Canlı üretim ortamında testlere başlanması ve IoT entegrasyonu.",
-                    techStack: ["Next.js", "Supabase", "PostgreSQL", "QR Code", "Tailwind CSS"],
-                    image: "/project-5.webp"
+                    techStack: ["Next.js", "Supabase", "PostgreSQL", "QR Code", "Inventory Management", "Dashboard", "Role Based Access"],
+                    impact: "Üretim ve depo süreçlerinde görünürlük, hız ve hata azaltma hedefi.",
+                    nextStep: "Depo modülü, QR okutma akışı, stok hareket geçmişi ve yönetici panelinin tamamlanması.",
+                    image: "/images/project-2.png",
+                    extraSections: []
                 },
                 {
-                    id: "petigo",
-                    title: "Petigo",
-                    status: "Geliştirmede",
-                    shortDescription: "Hayvan sahiplerini, veterinerleri, köpek gezdiricilerini ve hayvanseverleri bir araya getirmeyi hedefleyen pet teknolojisi platformu.",
-                    problem: "Hayvan sahipleri güvenilir veteriner, gezdirici, sahiplendirme ve topluluk alanlarına tek platformdan ulaşmakta zorlanıyor.",
-                    solution: "Profil sistemi, ilanlar, veteriner tanıtımları, köpek gezdirme, değerlendirme, forum ve güvenlik odaklı kullanıcı yapısı.",
-                    devProcess: "Kullanıcı rolleri, harita tabanlı ilan sistemi ve gerçek zamanlı mesajlaşma altyapısı oluşturuldu.",
-                    futurePlans: "Uygulamanın kapalı beta testlerinin başlatılması ve pazaryeri modülünün eklenmesi.",
-                    techStack: ["Flutter", "Firebase", "Maps API", "Stripe"],
-                    image: "/project-3.webp"
+                    id: "qr-smart-pet-tag",
+                    title: "QR Smart Pet Tag",
+                    status: "Prototip / Geliştirmede",
+                    shortDescription: "Kaybolan hayvanların QR kodlu tasma etiketi ile hızlıca sahibine ulaştırılmasını hedefleyen düşük maliyetli akıllı kimlik sistemi.",
+                    problem: "Kaybolan hayvanların sahibine ulaşması zaman alıyor ve çoğu zaman konum bilgisi net iletilemiyor.",
+                    solution: "QR kod okutulduğunda hayvan bilgileri görüntülenir, sahibine konumlu bildirim gönderilir ve iletişim başlatılır.",
+                    techStack: ["Firebase", "QR Code", "Location Sharing", "Email Notification", "Web App", "Pet Safety"],
+                    impact: "Kayıp hayvanların daha hızlı bulunmasını sağlayabilecek düşük maliyetli sistem.",
+                    nextStep: "Veteriner ve petshop iş ortakları için pilot dağıtım modeli hazırlanması.",
+                    image: "/images/project-3.png",
+                    extraSections: []
                 },
                 {
-                    id: "kampus",
+                    id: "kampusodak",
                     title: "KampüsOdak",
                     status: "Yayında",
                     shortDescription: "Öğrenciler için online kütüphane, odaklanma ve çalışma partneri bulma özellikleri sunan web uygulaması.",
                     problem: "Öğrenciler evde veya yurtta çalışırken motivasyon, odak ve çalışma arkadaşı bulma konusunda zorlanabiliyor.",
                     solution: "Tekli odak modu, hızlı eşleştirme, sanal çalışma odaları, zamanlayıcı ve dijital çalışma deneyimi.",
-                    devProcess: "Aktif olarak binlerce öğrenci tarafından kullanılıyor. Sistem kararlılığı ve sunucu maliyet optimizasyonu sağlandı.",
-                    futurePlans: "Mobil uygulamanın geliştirilmesi ve yapay zeka destekli çalışma analizleri.",
-                    techStack: ["React", "Node.js", "MongoDB", "Socket.io"],
-                    image: "/project-2.webp"
+                    techStack: ["React", "Node.js", "MongoDB", "Web App", "Real-Time Features"],
+                    impact: "Öğrenciler için dijital çalışma ve odaklanma deneyimi sunan yayında bir web uygulaması.",
+                    nextStep: "Kullanıcı deneyimini geliştirmek, SEO görünürlüğünü artırmak ve öğrenci topluluğu oluşturmak.",
+                    image: "/images/project-4.png",
+                    extraSections: []
                 },
                 {
-                    id: "qrpet",
-                    title: "QR Smart Pet Tag",
-                    status: "Prototip / Geliştirmede",
-                    shortDescription: "Kaybolan hayvanların QR kodlu tasma etiketi ile hızlıca sahibine ulaştırılmasını hedefleyen sistem.",
-                    problem: "Kaybolan hayvanların sahibine ulaşması zaman alıyor ve çoğu zaman konum bilgisi net iletilemiyor.",
-                    solution: "QR kod okutulduğunda hayvan bilgileri görüntülenir, sahibine konumlu bildirim gönderilir ve iletişim başlatılır.",
-                    devProcess: "Yazılım altyapısı ve konum tespit bildirim sistemi tamamlandı. Fiziksel donanım testleri yapılıyor.",
-                    futurePlans: "Fiziksel prototiplerin üretilmesi ve Petigo ekosistemine entegrasyonu.",
-                    techStack: ["React", "Firebase", "Geolocation API", "NFC"],
-                    image: "/project-1.webp"
-                },
-                {
-                    id: "omni",
+                    id: "omni-vital",
                     title: "Omni-Vital",
                     status: "Araştırma / Prototip",
                     shortDescription: "Kamera üzerinden yüz ve cilt rengi değişimlerini analiz ederek nabız gibi temel vital verileri tahmin etmeyi hedefleyen bilgisayarlı görü projesi.",
                     problem: "Bazı durumlarda hızlı ön değerlendirme için ekstra cihaz olmadan temel sağlık sinyallerini gözlemlemek gerekebilir.",
-                    solution: "Kamera görüntüsünden yüz algılama, rPPG (remote photoplethysmography) sinyal çıkarımı, BPM tahmini.",
-                    devProcess: "Kamera tabanlı ilk rPPG algoritması test edildi, gürültü filtreleme üzerine optimizasyonlar yapılıyor.",
-                    futurePlans: "Aydınlatma değişimlerine karşı algoritmanın iyileştirilmesi ve mobil uyumluluk.",
-                    techStack: ["Python", "OpenCV", "MediaPipe", "Signal Processing"],
-                    image: "/project-2.webp"
+                    solution: "Kamera görüntüsünden yüz algılama, sinyal çıkarımı, BPM tahmini ve görsel yönlendirme ekranı.",
+                    techStack: ["Python", "OpenCV", "Computer Vision", "Signal Processing", "Face Detection", "Health Tech"],
+                    impact: "Cihazsız temel vital analiz üzerine deneysel çalışma.",
+                    nextStep: "Daha kararlı ölçüm, gerçek zamanlı arayüz ve doğruluk testi yapılması.",
+                    image: "/images/project-5.png",
+                    extraSections: []
+                },
+                {
+                    id: "biyo-mercek",
+                    title: "Biyo-Mercek",
+                    status: "Konsept / Proof of Concept",
+                    shortDescription: "Akıllı telefon kamerasını polimer damla mercek ve işlemsel fotoğrafçılık algoritmalarıyla yapay zeka destekli cep mikroskobuna dönüştürmeyi hedefleyen deeptech proje.",
+                    problem: "Kırsal bölgelerde, tarım arazilerinde ve afet alanlarında kan tahlili, su analizi veya bitki patolojisi için donanımlı laboratuvarlara erişim zor olabilir.",
+                    solution: "Telefon kamerasına takılan düşük maliyetli optik mercek ile mikroskobik görüntü alınır. Focus peaking, focus stacking ve cihaz içi yapay zeka ile görüntüler işlenerek analiz yapılır.",
+                    techStack: ["OpenCV", "Computational Photography", "Focus Stacking", "Focus Peaking", "TensorFlow Lite", "CoreML", "Computer Vision", "Mobile AI", "PDMS Lens", "Microscopy"],
+                    impact: "Laboratuvar erişiminin kısıtlı olduğu bölgelerde düşük maliyetli ve taşınabilir analiz yaklaşımı.",
+                    nextStep: "Lazer merceği ile ilk mobil kamera büyütme testi, OpenCV tabanlı odak tespit demo uygulaması ve örnek görüntü analiz akışı hazırlanması.",
+                    image: "/images/project-6.png",
+                    extraSections: [
+                        { title: "Donanım Yaklaşımı", content: "PDMS veya benzeri şeffaf polimer damla mercek kullanımı hedeflenir. MVP aşamasında lazer işaretleyici içinden çıkan küçük odak merceği ile telefon kamerası üzerinde proof of concept testleri yapılabilir." },
+                        { title: "Yazılım Yaklaşımı", content: "OpenCV ile gerçek zamanlı odak tespiti, Laplace operatörüyle keskinlik analizi, focus stacking ile farklı derinliklerden gelen net alanların birleştirilmesi ve TensorFlow Lite/CoreML ile cihaz içi analiz." },
+                        { title: "Kullanım Alanları", content: "Su analizi, bitki hastalığı tespiti, saha mikroskobisi, eğitim, afet bölgelerinde hızlı ön analiz." }
+                    ]
+                },
+                {
+                    id: "nefes-ag",
+                    title: "Nefes-Ağ",
+                    status: "Konsept / Araştırma",
+                    shortDescription: "Öksürük ve nefes seslerini akustik biyobelirteçlere dönüştürerek solunum yolu hastalıkları için yapay zeka destekli ön tarama yapmayı hedefleyen edge AI projesi.",
+                    problem: "Birçok bölgede uzman doktora, röntgen cihazına veya gelişmiş solunum testlerine erişim sınırlıdır. Solunum yolu hastalıklarında erken uyarı mekanizmaları yetersiz kalabilir.",
+                    solution: "Telefon mikrofonu ile alınan öksürük ve nefes sesleri spektrograma dönüştürülür. Bu görsel veri CNN tabanlı yapay zeka modeliyle analiz edilerek risk sınıflandırması yapılır.",
+                    techStack: ["Python", "Librosa", "STFT", "MFCC", "Spectrogram", "CNN", "TensorFlow Lite", "ONNX", "Audio AI", "Edge AI", "Telemedicine"],
+                    impact: "Telefon mikrofonunu düşük maliyetli bir akustik ön tarama aracına dönüştürmeyi hedefleyen araştırma projesi.",
+                    nextStep: "Coughvid veya Coswara gibi açık veri setleriyle ilk spektrogram üretimi, basit CNN modeli eğitimi ve demo arayüz hazırlanması.",
+                    image: "/images/project-7.png",
+                    extraSections: [
+                        { title: "Matematiksel Yaklaşım", content: "Ham ses sinyali STFT ve MFCC gibi yöntemlerle zaman-frekans temsiline dönüştürülür. Böylece öksürük sesi 2 boyutlu spektrogram görseli haline gelir." },
+                        { title: "Yapay Zeka Yaklaşımı", content: "Spektrogramlar MobileNetV2, ResNet veya benzeri CNN modelleri ile sınıflandırılır. Mobil cihazlarda TensorFlow Lite veya ONNX ile edge AI analizi hedeflenir." },
+                        { title: "Telefoni Vizyonu", content: "Akıllı telefonu olmayan kullanıcılar için ileride IVR/GSM hattı üzerinden ses kaydı alıp bulut tabanlı analiz yapılabilecek yapı kurgulanabilir." },
+                        { title: "Kullanım Alanları", content: "Evde erken uyarı, kırsal sağlık taraması, solunum yolu risk analizi, tele-tıp ön değerlendirme, epidemiyolojik erken uyarı konseptleri." }
+                    ]
                 }
             ]
         },
@@ -265,81 +293,109 @@ export const translations = {
                 solution: "Solution",
                 techStack: "Tech Stack",
                 status: "Status",
-                devProcess: "Development Process",
-                futurePlans: "Future Plans"
+                impact: "Impact",
+                nextStep: "Next Steps"
             },
             items: [
                 {
-                    id: "resq",
+                    id: "resq-72",
                     title: "ResQ-72",
                     status: "Research / Prototype",
                     shortDescription: "Mesh-based emergency communication system aiming to provide basic messaging and location sharing even if GSM and internet infrastructure fail in the first 72 hours post-disaster.",
                     problem: "During earthquakes and disasters, base stations, internet, and electricity can go down. Inability to transmit location and status in the first 72 hours hinders search and rescue.",
-                    solution: "Low-bandwidth messaging, LoRa/mesh communication logic, short data packets, prioritized emergency messages, and team-citizen communication.",
-                    devProcess: "System architecture designed. Research on communication protocols and basic network simulations are underway.",
-                    futurePlans: "Testing range and packet transmission of the prototype under field conditions.",
-                    techStack: ["LoRa", "Mesh Network", "IoT", "PWA", "Simulation"],
-                    image: "/project-4.webp"
+                    solution: "Low-bandwidth messaging, mesh communication logic, short data packets, prioritized emergency messages, and team-citizen communication.",
+                    techStack: ["LoRa", "Mesh Network", "IoT", "PWA", "Simulation", "Emergency Communication", "Data Packet Design"],
+                    impact: "Research and prototype study on infrastructure-independent communication models post-disaster.",
+                    nextStep: "Small-scale field testing, technical whitepaper preparation, and pitch deck creation for competition applications.",
+                    image: "/images/project-1.png",
+                    extraSections: []
                 },
                 {
-                    id: "erp",
+                    id: "industrial-erp",
                     title: "Industrial ERP & Warehouse System",
                     status: "In Development",
                     shortDescription: "ERP system that digitalizes warehouse, inventory, product, material, order, and production tracking for manufacturing companies.",
                     problem: "Manual tracking of warehouse layout, stock, material flow, dimension differences, and production processes increases the risk of errors.",
                     solution: "QR-coded product and shelf tracking, stock movements, warehouse map, product recipes, material history, user roles, and reporting.",
-                    devProcess: "Core modules (stock, QR mapping, user roles) coded. MVP version is being created.",
-                    futurePlans: "Initiating tests in a live production environment and IoT integration.",
-                    techStack: ["Next.js", "Supabase", "PostgreSQL", "QR Code", "Tailwind CSS"],
-                    image: "/project-5.webp"
+                    techStack: ["Next.js", "Supabase", "PostgreSQL", "QR Code", "Inventory Management", "Dashboard", "Role Based Access"],
+                    impact: "Aiming to increase visibility, speed, and reduce errors in production and warehouse processes.",
+                    nextStep: "Completing the warehouse module, QR scanning flow, stock movement history, and admin panel.",
+                    image: "/images/project-2.png",
+                    extraSections: []
                 },
                 {
-                    id: "petigo",
-                    title: "Petigo",
-                    status: "In Development",
-                    shortDescription: "A pet technology platform aiming to bring together pet owners, veterinarians, dog walkers, and animal lovers.",
-                    problem: "Pet owners struggle to find reliable vets, walkers, adoption centers, and community spaces on a single platform.",
-                    solution: "Profile system, listings, vet directories, dog walking, reviews, forums, and a safety-focused user structure.",
-                    devProcess: "User roles, map-based listing system, and real-time messaging infrastructure established.",
-                    futurePlans: "Launching closed beta tests and adding a marketplace module.",
-                    techStack: ["Flutter", "Firebase", "Maps API", "Stripe"],
-                    image: "/project-3.webp"
+                    id: "qr-smart-pet-tag",
+                    title: "QR Smart Pet Tag",
+                    status: "Prototype / In Development",
+                    shortDescription: "A low-cost smart ID system aimed at quickly returning lost pets to their owners via a QR-coded collar tag.",
+                    problem: "Reuniting lost pets with owners takes time, and location information is often not communicated clearly.",
+                    solution: "When the QR code is scanned, pet info is displayed, a notification with location is sent to the owner, and contact is initiated.",
+                    techStack: ["Firebase", "QR Code", "Location Sharing", "Email Notification", "Web App", "Pet Safety"],
+                    impact: "A low-cost system that enables faster recovery of lost animals.",
+                    nextStep: "Preparing a pilot distribution model for veterinary and petshop partners.",
+                    image: "/images/project-3.png",
+                    extraSections: []
                 },
                 {
-                    id: "kampus",
+                    id: "kampusodak",
                     title: "KampüsOdak",
                     status: "Live",
                     shortDescription: "A web application offering online library, focus modes, and study partner matchmaking for students.",
                     problem: "Students studying at home or in dorms often struggle with motivation, focus, and finding study partners.",
                     solution: "Solo focus mode, quick matching, virtual study rooms, timers, and a digital study experience.",
-                    devProcess: "Actively used by thousands of students. System stability and server cost optimization achieved.",
-                    futurePlans: "Developing a mobile app and AI-powered study analytics.",
-                    techStack: ["React", "Node.js", "MongoDB", "Socket.io"],
-                    image: "/project-2.webp"
+                    techStack: ["React", "Node.js", "MongoDB", "Web App", "Real-Time Features"],
+                    impact: "A live web application providing a digital study and focus experience for students.",
+                    nextStep: "Improving user experience, increasing SEO visibility, and building a student community.",
+                    image: "/images/project-4.png",
+                    extraSections: []
                 },
                 {
-                    id: "qrpet",
-                    title: "QR Smart Pet Tag",
-                    status: "Prototype / In Development",
-                    shortDescription: "A system aimed at quickly returning lost pets to their owners via a QR-coded collar tag.",
-                    problem: "Reuniting lost pets with owners takes time, and location information is often not communicated clearly.",
-                    solution: "When the QR code is scanned, pet info is displayed, a notification with location is sent to the owner, and contact is initiated.",
-                    devProcess: "Software infrastructure and location tracking notification system completed. Physical hardware tests ongoing.",
-                    futurePlans: "Producing physical prototypes and integrating into the Petigo ecosystem.",
-                    techStack: ["React", "Firebase", "Geolocation API", "NFC"],
-                    image: "/project-1.webp"
-                },
-                {
-                    id: "omni",
+                    id: "omni-vital",
                     title: "Omni-Vital",
                     status: "Research / Prototype",
                     shortDescription: "A computer vision project aiming to estimate basic vital signs like heart rate by analyzing facial and skin color changes via camera.",
                     problem: "In some scenarios, it's necessary to observe basic health signals for quick preliminary assessment without extra devices.",
-                    solution: "Face detection from camera feed, rPPG (remote photoplethysmography) signal extraction, BPM estimation.",
-                    devProcess: "Initial camera-based rPPG algorithm tested; optimizations on noise filtering are being made.",
-                    futurePlans: "Improving the algorithm against lighting changes and adding mobile compatibility.",
-                    techStack: ["Python", "OpenCV", "MediaPipe", "Signal Processing"],
-                    image: "/project-2.webp"
+                    solution: "Face detection from camera feed, signal extraction, BPM estimation, and a visual guidance interface.",
+                    techStack: ["Python", "OpenCV", "Computer Vision", "Signal Processing", "Face Detection", "Health Tech"],
+                    impact: "Experimental study on device-free basic vital analysis.",
+                    nextStep: "Achieving more stable measurements, building a real-time interface, and conducting accuracy tests.",
+                    image: "/images/project-5.png",
+                    extraSections: []
+                },
+                {
+                    id: "biyo-mercek",
+                    title: "Biyo-Mercek",
+                    status: "Concept / Proof of Concept",
+                    shortDescription: "A deeptech project aiming to transform a smartphone camera into an AI-powered pocket microscope using a polymer drop lens and computational photography algorithms.",
+                    problem: "In rural areas, farmlands, and disaster zones, access to equipped laboratories for blood tests, water analysis, or plant pathology can be difficult.",
+                    solution: "A microscopic image is captured via a low-cost optical lens attached to the phone camera. Images are analyzed using focus peaking, focus stacking, and on-device AI.",
+                    techStack: ["OpenCV", "Computational Photography", "Focus Stacking", "Focus Peaking", "TensorFlow Lite", "CoreML", "Computer Vision", "Mobile AI", "PDMS Lens", "Microscopy"],
+                    impact: "A low-cost and portable analysis approach for regions with limited access to laboratories.",
+                    nextStep: "Initial mobile camera magnification tests with a laser lens, developing an OpenCV-based focus detection demo, and preparing a sample image analysis flow.",
+                    image: "/images/project-6.png",
+                    extraSections: [
+                        { title: "Hardware Approach", content: "Aiming to use a PDMS or similar transparent polymer drop lens. In the MVP phase, proof of concept tests can be conducted on the phone camera using a small focus lens extracted from a laser pointer." },
+                        { title: "Software Approach", content: "Real-time focus detection with OpenCV, sharpness analysis via the Laplace operator, combining in-focus areas from different depths with focus stacking, and on-device analysis with TensorFlow Lite/CoreML." },
+                        { title: "Use Cases", content: "Water analysis, plant disease detection, field microscopy, education, rapid preliminary analysis in disaster zones." }
+                    ]
+                },
+                {
+                    id: "nefes-ag",
+                    title: "Nefes-Ağ",
+                    status: "Concept / Research",
+                    shortDescription: "An edge AI project aiming to conduct AI-supported pre-screening for respiratory diseases by converting cough and breath sounds into acoustic biomarkers.",
+                    problem: "In many regions, access to specialized doctors, X-ray machines, or advanced respiratory tests is limited. Early warning mechanisms for respiratory diseases can be inadequate.",
+                    solution: "Cough and breath sounds captured by the phone microphone are converted into spectrograms. This visual data is analyzed by a CNN-based AI model for risk classification.",
+                    techStack: ["Python", "Librosa", "STFT", "MFCC", "Spectrogram", "CNN", "TensorFlow Lite", "ONNX", "Audio AI", "Edge AI", "Telemedicine"],
+                    impact: "A research project aiming to transform the phone microphone into a low-cost acoustic pre-screening tool.",
+                    nextStep: "Initial spectrogram generation using open datasets like Coughvid or Coswara, training a basic CNN model, and preparing a demo interface.",
+                    image: "/images/project-7.png",
+                    extraSections: [
+                        { title: "Mathematical Approach", content: "The raw audio signal is converted into a time-frequency representation using methods like STFT and MFCC. Thus, the cough sound becomes a 2D spectrogram image." },
+                        { title: "AI Approach", content: "Spectrograms are classified using CNN models like MobileNetV2, ResNet, etc. Edge AI analysis is targeted on mobile devices using TensorFlow Lite or ONNX." },
+                        { title: "Telephony Vision", content: "For users without smartphones, a future structure can be designed to record audio over an IVR/GSM line for cloud-based analysis." },
+                        { title: "Use Cases", content: "In-home early warning, rural health screening, respiratory risk analysis, telemedicine pre-assessment, epidemiological early warning concepts." }
+                    ]
                 }
             ]
         },

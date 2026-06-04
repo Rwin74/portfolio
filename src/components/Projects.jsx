@@ -85,20 +85,36 @@ const ProjectModal = ({ project, onClose }) => {
                             </div>
                         </div>
 
-                        <div className="grid sm:grid-cols-3 gap-6 bg-white/5 p-6 rounded-2xl border border-white/5">
+                        <div className="grid sm:grid-cols-3 gap-6 bg-white/5 p-6 rounded-2xl border border-white/5 mt-8">
                             <div className="space-y-3">
                                 <div className="text-white text-sm font-semibold flex items-center gap-2"><Globe className="w-4 h-4 text-gray-400"/> {t.projects.modal.status}</div>
                                 <p className="text-gray-400 text-sm">{project.status}</p>
                             </div>
                             <div className="space-y-3">
-                                <div className="text-white text-sm font-semibold flex items-center gap-2"><Terminal className="w-4 h-4 text-gray-400"/> {t.projects.modal.devProcess}</div>
-                                <p className="text-gray-400 text-sm leading-relaxed">{project.devProcess}</p>
+                                <div className="text-white text-sm font-semibold flex items-center gap-2"><Terminal className="w-4 h-4 text-gray-400"/> {t.projects.modal.impact}</div>
+                                <p className="text-gray-400 text-sm leading-relaxed">{project.impact}</p>
                             </div>
                             <div className="space-y-3">
-                                <div className="text-white text-sm font-semibold flex items-center gap-2"><Map className="w-4 h-4 text-gray-400"/> {t.projects.modal.futurePlans}</div>
-                                <p className="text-gray-400 text-sm leading-relaxed">{project.futurePlans}</p>
+                                <div className="text-white text-sm font-semibold flex items-center gap-2"><Map className="w-4 h-4 text-gray-400"/> {t.projects.modal.nextStep}</div>
+                                <p className="text-gray-400 text-sm leading-relaxed">{project.nextStep}</p>
                             </div>
                         </div>
+
+                        {/* Extra Sections Dynamic Rendering */}
+                        {project.extraSections && project.extraSections.length > 0 && (
+                            <div className="grid sm:grid-cols-2 gap-8 mt-8">
+                                {project.extraSections.map((section, index) => (
+                                    <div key={index} className="space-y-4">
+                                        <div className="flex items-center gap-2 text-white font-semibold border-b border-white/10 pb-2">
+                                            <Sparkles className="w-5 h-5 text-primary" /> {section.title}
+                                        </div>
+                                        <p className="text-gray-400 text-sm leading-relaxed bg-white/5 p-4 rounded-xl border border-white/5">
+                                            {section.content}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
 
                     </div>
                 </motion.div>
