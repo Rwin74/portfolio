@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, MessageSquare, Linkedin, Instagram, Sparkles, Send } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
     const containerVariants = {
@@ -15,6 +16,8 @@ const Contact = () => {
         hidden: { opacity: 0, y: 40 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
     };
+
+    const { t } = useLanguage();
 
     return (
         <section id="contact" className="py-24 px-4 relative overflow-hidden">
@@ -32,18 +35,18 @@ const Contact = () => {
                 <div className="text-center mb-20">
                     <motion.div variants={itemVariants} className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/5 border border-white/10 text-primary text-sm font-medium tracking-wider uppercase mb-6 backdrop-blur-md">
                         <Sparkles className="w-4 h-4" />
-                        <span>İletişim & İşbirliği</span>
+                        <span>{t.contact.badge}</span>
                     </motion.div>
 
                     <motion.h2 variants={itemVariants} className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                        Yeni Projenize <br />
+                        {t.contact.titleLine1} <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-indigo-500">
-                            Başlamaya Hazır Mısınız?
+                            {t.contact.titleLine2}
                         </span>
                     </motion.h2>
 
                     <motion.p variants={itemVariants} className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                        Vizyonunuzu nasıl hayata geçirebileceğimizi konuşalım. Şu anda yenilikçi projeler ve üst düzey danışmanlık için müsaitim.
+                        {t.contact.description}
                     </motion.p>
                 </div>
 
@@ -58,8 +61,8 @@ const Contact = () => {
                                 <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mb-6 text-green-500 group-hover:scale-110 transition-transform duration-500 border border-green-500/20 shadow-[0_0_30px_rgba(34,197,94,0.2)]">
                                     <MessageSquare className="w-10 h-10" />
                                 </div>
-                                <h3 className="text-2xl font-bold mb-4 text-white">Hızlı İletişim</h3>
-                                <p className="text-gray-400 mb-8">Anında dönüş almak ve projenizi hızlandırmak için WhatsApp üzerinden direkt ulaşın.</p>
+                                <h3 className="text-2xl font-bold mb-4 text-white">{t.contact.fastContactTitle}</h3>
+                                <p className="text-gray-400 mb-8">{t.contact.fastContactDesc}</p>
 
                                 <a
                                     href="https://wa.me/905447218974?text=Merhaba%20Atakan,%20projem%20hakkında%20konuşmak%20istiyorum."
@@ -68,7 +71,7 @@ const Contact = () => {
                                     className="relative inline-flex items-center gap-3 px-8 py-4 bg-green-500 text-white rounded-full font-semibold text-lg overflow-hidden group/btn w-full justify-center"
                                 >
                                     <span className="relative z-10 flex items-center gap-2">
-                                        Projeni Hayata Geçir
+                                        {t.contact.btnWhatsapp}
                                         <Send className="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                                     </span>
                                     <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-500 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300 ease-in-out" />
@@ -80,10 +83,10 @@ const Contact = () => {
                     {/* Info Cards Grid */}
                     <div className="w-full lg:w-2/3 grid sm:grid-cols-2 gap-6">
                         {[
-                            { icon: Mail, title: "E-posta", value: "atakan7495@gmail.com", href: "mailto:atakan7495@gmail.com" },
-                            { icon: Phone, title: "Telefon", value: "0544 721 89 74", href: "tel:+905447218974" },
-                            { icon: MapPin, title: "Konum", value: "Denizli, Türkiye", href: null },
-                            { icon: Linkedin, title: "LinkedIn", value: "Atakan Yağlı", href: "https://www.linkedin.com/in/atakanyagli" }
+                            { icon: Mail, title: t.contact.emailLabel, value: "atakan7495@gmail.com", href: "mailto:atakan7495@gmail.com" },
+                            { icon: Phone, title: t.contact.phoneLabel, value: "0544 721 89 74", href: "tel:+905447218974" },
+                            { icon: MapPin, title: t.contact.locationLabel, value: t.contact.locationValue, href: null },
+                            { icon: Linkedin, title: t.contact.socialsLabel, value: "Atakan Yağlı", href: "https://www.linkedin.com/in/atakanyagli" }
                         ].map((item, index) => (
                             <motion.a
                                 key={index}
@@ -115,7 +118,7 @@ const Contact = () => {
             <footer className="mt-32 max-w-6xl mx-auto border-t border-white/10 pt-10 pb-4 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-gray-400 text-sm font-medium">
-                        © {new Date().getFullYear()} Atakan Yağlı. Tüm hakları saklıdır.
+                        © {new Date().getFullYear()} {t.contact.copyright}
                     </p>
 
                     <div className="flex gap-4">

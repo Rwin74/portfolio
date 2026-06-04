@@ -1,11 +1,13 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Hero = () => {
     const { scrollY } = useScroll();
     const y2 = useTransform(scrollY, [0, 500], [0, -100]);
     const sectionRef = useRef(null);
+    const { t } = useLanguage();
 
     return (
         <section id="hero" ref={sectionRef} className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20">
@@ -27,7 +29,7 @@ const Hero = () => {
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                         </span>
-                        Teknoloji Geliştirici & Ürün İnovatörü
+                        {t.hero.badge}
                     </motion.div>
 
                     <motion.h1 
@@ -36,8 +38,8 @@ const Hero = () => {
                         transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         className="text-5xl md:text-6xl lg:text-[5rem] font-bold tracking-tight mb-8 leading-[1.1] text-white"
                     >
-                        Gerçek dünya zorlukları için 
-                        <span className="block text-gray-500 mt-2">teknoloji inşa ediyorum.</span>
+                        {t.hero.titleLine1}
+                        <span className="block text-gray-500 mt-2">{t.hero.titleLine2}</span>
                     </motion.h1>
 
                     <motion.p
@@ -46,7 +48,7 @@ const Hero = () => {
                         transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         className="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed mb-10 font-light"
                     >
-                        Pratik sorunları çözmek için tasarlanmış yazılım, yapay zeka sistemleri, endüstriyel otomasyon ve teknoloji odaklı ürünler.
+                        {t.hero.description}
                     </motion.p>
 
                     <motion.div
@@ -59,14 +61,14 @@ const Hero = () => {
                             href="#projects" 
                             className="group flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white text-black font-semibold transition-all duration-300 hover:bg-gray-200"
                         >
-                            Projeleri İncele
+                            {t.hero.btnProjects}
                             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                         </a>
                         <a 
                             href="#contact" 
                             className="flex items-center justify-center px-8 py-3.5 rounded-full bg-white/5 border border-white/10 text-white font-medium transition-colors hover:bg-white/10 backdrop-blur-sm"
                         >
-                            İletişime Geç
+                            {t.hero.btnContact}
                         </a>
                     </motion.div>
                 </div>

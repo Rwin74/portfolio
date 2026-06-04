@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { Code2, Palette, Globe, Terminal, Sparkles } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const TiltCard = ({ skill, variants }) => {
     return (
@@ -32,12 +33,19 @@ const About = () => {
     const yImg = useTransform(scrollYProgress, [0, 1], [50, -50]);
     const rotateImg = useTransform(scrollYProgress, [0, 1], [-5, 5]);
 
-    const skills = [
-        { icon: <Terminal className="w-6 h-6" />, title: "Geliştirme", desc: "React, Node.js, Python" },
-        { icon: <Palette className="w-6 h-6" />, title: "Tasarım", desc: "UI/UX, Figma, 3D" },
-        { icon: <Globe className="w-6 h-6" />, title: "Strateji", desc: "SEO, Büyüme" },
-        { icon: <Code2 className="w-6 h-6" />, title: "Mimari", desc: "Ölçeklenebilir Sistemler" }
+    const { t } = useLanguage();
+
+    const skillIcons = [
+        <Terminal className="w-6 h-6" />,
+        <Palette className="w-6 h-6" />,
+        <Globe className="w-6 h-6" />,
+        <Code2 className="w-6 h-6" />
     ];
+
+    const skills = t.about.skills.map((skill, index) => ({
+        ...skill,
+        icon: skillIcons[index]
+    }));
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -87,10 +95,10 @@ const About = () => {
                                 className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-white/10 border border-white/20 p-4 rounded-xl flex items-center justify-between"
                             >
                                 <div>
-                                    <p className="text-gray-400 text-xs font-mono uppercase mb-1">Kod Adı</p>
+                                    <p className="text-gray-400 text-xs font-mono uppercase mb-1">{t.about.codename}</p>
                                     <p className="text-white font-bold flex items-center gap-2">
                                         <Sparkles className="w-4 h-4 text-primary" />
-                                        Teknoloji Üreticisi
+                                        {t.about.role}
                                     </p>
                                 </div>
                                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/50">
@@ -109,34 +117,34 @@ const About = () => {
                         className="relative z-10 mt-8 lg:mt-0"
                     >
                         <motion.span variants={itemVariants} className="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6 font-medium tracking-wide">
-                            Hakkımda
+                            {t.about.badge}
                         </motion.span>
 
                         <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-                            İnovasyon & Mühendislik <br className="hidden sm:block" />
+                            {t.about.titleLine1} <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-indigo-500">
-                                Odaklı Yaklaşım
+                                {t.about.titleLine2}
                             </span>
                         </motion.h2>
 
                         <motion.p variants={itemVariants} className="text-gray-400 text-lg mb-8 leading-relaxed border-l-4 border-primary/30 pl-6">
-                            Pratik zorlukları yazılım, otomasyon ve yenilikçi ürün tasarımı aracılığıyla çözmeye odaklanan bir yazılım geliştirici ve teknoloji üreticisiyim. İleri düzey sistemler ve yapay zeka destekli çözümler geliştirerek gerçek dünya problemlerine ölçeklenebilir yanıtlar sunuyorum.
+                            {t.about.description}
                         </motion.p>
 
                         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 sm:gap-8 mb-12">
                             <div className="flex flex-col">
                                 <span className="text-4xl lg:text-5xl font-bold text-white mb-2">5+</span>
-                                <span className="text-sm tracking-widest text-gray-500 uppercase">Yıllık<br />Deneyim</span>
+                                <span className="text-sm tracking-widest text-gray-500 uppercase" dangerouslySetInnerHTML={{ __html: t.about.expYears.replace(' ', '<br/>') }}></span>
                             </div>
                             <div className="hidden sm:block w-px bg-white/10"></div>
                             <div className="flex flex-col">
                                 <span className="text-4xl lg:text-5xl font-bold text-white mb-2">50+</span>
-                                <span className="text-sm tracking-widest text-gray-500 uppercase">Başarılı<br />Proje</span>
+                                <span className="text-sm tracking-widest text-gray-500 uppercase" dangerouslySetInnerHTML={{ __html: t.about.expProjects.replace(' ', '<br/>') }}></span>
                             </div>
                             <div className="hidden sm:block w-px bg-white/10"></div>
                             <div className="flex flex-col">
                                 <span className="text-4xl lg:text-5xl font-bold text-white mb-2">%100</span>
-                                <span className="text-sm tracking-widest text-gray-500 uppercase">Proje<br />Adanmışlığı</span>
+                                <span className="text-sm tracking-widest text-gray-500 uppercase" dangerouslySetInnerHTML={{ __html: t.about.expDedication.replace(' ', '<br/>') }}></span>
                             </div>
                         </motion.div>
 

@@ -3,11 +3,10 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Preloader from './components/Preloader';
-
+import { LanguageProvider } from './context/LanguageContext';
 const Projects = lazy(() => import('./components/Projects'));
 const Timeline = lazy(() => import('./components/Timeline'));
 const About = lazy(() => import('./components/About'));
-const Estimator = lazy(() => import('./components/Estimator'));
 const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
@@ -37,7 +36,7 @@ function App() {
 
 
   return (
-    <>
+    <LanguageProvider>
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-primary z-[100000] origin-left drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]"
         style={{ scaleX }}
@@ -53,14 +52,12 @@ function App() {
               <Projects />
               <Timeline />
               <About />
-              <Estimator />
-
               <Contact />
             </Suspense>
           )}
         </main>
       </div>
-    </>
+    </LanguageProvider>
   );
 }
 

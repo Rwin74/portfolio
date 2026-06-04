@@ -1,51 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { CircleDot } from 'lucide-react';
-
-const timelineData = [
-    {
-        year: "2024",
-        title: "Erken Yazılım Projeleri",
-        bullets: [
-            "Web uygulamaları",
-            "İlk bağımsız ürün denemeleri",
-            "KampüsOdak"
-        ]
-    },
-    {
-        year: "2025",
-        title: "Ürün Geliştirme",
-        bullets: [
-            "Petigo",
-            "QR Smart Pet Tag",
-            "Dijital platform fikirleri"
-        ]
-    },
-    {
-        year: "2026",
-        title: "Araştırma ve Endüstriyel Sistemler",
-        bullets: [
-            "ResQ-72",
-            "Industrial ERP & Warehouse System",
-            "Omni-Vital",
-            "QR Warehouse Tracking"
-        ],
-        active: true
-    },
-    {
-        year: "2027+",
-        title: "Loop Ecosystem & Future Technologies",
-        bullets: [
-            "Emergency technologies",
-            "Industrial automation",
-            "Health tech",
-            "Pet tech",
-            "Future concepts"
-        ],
-        isFuture: true
-    }
-];
-
+import { useLanguage } from '../context/LanguageContext';
 const TimelineItem = ({ item, index }) => {
     const isEven = index % 2 === 0;
 
@@ -100,7 +56,15 @@ const Timeline = () => {
         offset: ["start center", "end center"]
     });
 
+    const { t } = useLanguage();
+
     const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+    const itemsWithStatus = t.timeline.items.map((item, index) => {
+        if (index === 2) return { ...item, active: true };
+        if (index === 3) return { ...item, isFuture: true };
+        return item;
+    });
 
     return (
         <section id="timeline" className="py-24 relative overflow-hidden" ref={containerRef}>
@@ -113,10 +77,10 @@ const Timeline = () => {
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
-                            Evrim Süreci
+                            {t.timeline.title}
                         </h2>
                         <p className="text-gray-400 text-lg font-light">
-                            Basit web projelerinden, karmaşık endüstriyel sistemlere ve geleceğin teknolojilerine uzanan yolculuk.
+                            {t.timeline.description}
                         </p>
                     </motion.div>
                 </div>
@@ -132,7 +96,7 @@ const Timeline = () => {
                     />
 
                     <div className="relative z-10 pt-8">
-                        {timelineData.map((item, index) => (
+                        {itemsWithStatus.map((item, index) => (
                             <TimelineItem key={index} item={item} index={index} />
                         ))}
                     </div>
