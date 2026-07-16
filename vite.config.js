@@ -16,7 +16,13 @@ export default defineConfig({
       dynamicRoutes: [
         '/denizli-seo',
         '/denizli-yazilim',
-        '/denizli-web-tasarim'
+        '/denizli-web-tasarim',
+        '/blog',
+        '/blog/denizli-yazilim-sirketleri-ile-dijital-donusum',
+        '/blog/denizli-seo-ajansi-nasil-secilir',
+        '/blog/denizli-web-tasarim-trendleri',
+        '/blog/denizlide-e-ticaret-sitesi-kurmak',
+        '/blog/yapay-zeka-destekli-seo-denizli'
       ]
     })
   ],

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const BrandName = () => {
@@ -125,6 +125,7 @@ const Navbar = () => {
                     <a href="#loop" onClick={(e) => handleScroll(e, 'loop')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">{t.nav.loop}</a>
                     <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">{t.nav.about}</a>
                     <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="inline-block p-1 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap">{t.nav.contact}</a>
+                    <Link to="/blog" className="inline-block p-1 text-xs md:text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap">Blog</Link>
                 </nav>
 
                 <div className="flex-1 flex justify-end min-w-[120px]">
