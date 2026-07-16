@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import viteCompression from 'vite-plugin-compression'
+import Sitemap from 'vite-plugin-sitemap'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,7 +10,15 @@ export default defineConfig({
     react(),
     tailwindcss(),
     viteCompression({ algorithm: 'brotliCompress', ext: '.br' }),
-    viteCompression({ algorithm: 'gzip', ext: '.gz' })
+    viteCompression({ algorithm: 'gzip', ext: '.gz' }),
+    Sitemap({
+      hostname: 'https://atakanyagli.com',
+      dynamicRoutes: [
+        '/denizli-seo',
+        '/denizli-yazilim',
+        '/denizli-web-tasarim'
+      ]
+    })
   ],
   build: {
     target: 'esnext',

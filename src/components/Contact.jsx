@@ -112,6 +112,21 @@ const Contact = () => {
                         ))}
                     </div>
                 </div>
+
+                {/* Google Maps Embed for Local SEO */}
+                <motion.div variants={itemVariants} className="mt-16 w-full h-[400px] rounded-3xl overflow-hidden border border-white/10 relative">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d29.0963!3d37.7830!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzU4LjgiTiAyOcKwMDUnNDYuNyJF!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" 
+                        width="100%" 
+                        height="100%" 
+                        style={{ border: 0 }} 
+                        allowFullScreen="" 
+                        loading="lazy" 
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Loop Technology Denizli Ofisi"
+                    ></iframe>
+                </motion.div>
+
             </motion.div>
 
             {/* Footer */}

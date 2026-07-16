@@ -39,7 +39,7 @@ const Projects = () => {
                             <div className="relative h-48 w-full overflow-hidden bg-white/5">
                                 <img 
                                     src={project.image} 
-                                    alt={project.title}
+                                    alt={`${project.title} - Loop Technology Denizli`}
                                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                                     loading="lazy"
                                 />
