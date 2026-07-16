@@ -15,7 +15,15 @@ const Footer = () => {
                         <p className="text-gray-400 text-sm">Founder of Loop Technology</p>
                     </div>
 
-
+                    <div className="flex flex-col items-center md:items-end text-center md:text-right mt-6 md:mt-0">
+                        <h4 className="text-white font-semibold mb-2">İletişim & Lokasyon</h4>
+                        <address className="text-gray-400 text-sm not-italic space-y-1">
+                            <p><strong>Loop Technology - Denizli SEO & Yazılım</strong></p>
+                            <p>Telefon: <a href="tel:+905447218974" className="hover:text-white transition-colors">0544 721 89 74</a></p>
+                            <p>Adres: <span className="hover:text-white transition-colors">Yenişafak Mah. 1034 Sok. No: 14M Merkezefendi / Denizli</span></p>
+                            <p>E-posta: <a href="mailto:info@atakanyagli.com" className="hover:text-white transition-colors">info@atakanyagli.com</a></p>
+                        </address>
+                    </div>
                     
                 </div>
             </div>

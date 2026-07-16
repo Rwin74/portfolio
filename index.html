@@ -2,27 +2,14 @@
 <html lang="tr">
 
 <head>
-  <!-- Google tag (gtag.js) - Deferred for Performance -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZLEYBP73X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XQ3RDVNX90');
 
-    let gtmLoaded = false;
-    function loadGTM() {
-      if (gtmLoaded) return;
-      gtmLoaded = true;
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XQ3RDVNX90';
-      document.head.appendChild(script);
-      // Remove listeners
-      ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'].forEach(evt => window.removeEventListener(evt, loadGTM));
-    }
-
-    // Load GTM on interaction
-    ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'].forEach(evt => window.addEventListener(evt, loadGTM, { once: true, passive: true }));
+    gtag('config', 'G-8ZLEYBP73X');
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,16 +25,16 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/favicon/site.webmanifest" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atakan Yağlı | Founder of Loop Technology</title>
+  <title>Denizli Yazılım ve SEO Ajansı | Atakan Yağlı - Loop Technology</title>
   <meta name="description"
-    content="Atakan Yağlı is a software developer, product builder and founder of Loop Technology, working on emergency technologies, AI systems, industrial software and digital products.">
+    content="Denizli'nin önde gelen yazılım ve SEO ajansı Loop Technology ile tanışın. Web tasarım, SEO, yapay zeka sistemleri ve dijital dönüşüm çözümleri.">
   <link rel="canonical" href="https://atakanyagli.com" />
   <link rel="preload" as="image" href="/sad.webp?v=2" type="image/webp" fetchpriority="high" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Atakan Yağlı | Founder of Loop Technology" />
+  <meta property="og:title" content="Denizli Yazılım ve SEO Ajansı | Atakan Yağlı - Loop Technology" />
   <meta property="og:description"
-    content="Atakan Yağlı is a software developer, product builder and founder of Loop Technology, working on emergency technologies, AI systems, industrial software and digital products." />
+    content="Denizli'nin önde gelen yazılım ve SEO ajansı Loop Technology ile tanışın. Web tasarım, SEO, yapay zeka sistemleri ve dijital dönüşüm çözümleri." />
   <meta property="og:image" content="https://atakanyagli.com/sad.webp?v=2" />
   <meta property="og:image:alt" content="Atakan Yağlı - Founder of Loop Technology" />
   <meta property="og:url" content="https://atakanyagli.com" />
@@ -62,8 +49,8 @@
           "@type": "WebSite",
           "@id": "https://atakanyagli.com/#website",
           "url": "https://atakanyagli.com",
-          "name": "Atakan Yağlı",
-          "description": "Founder of Loop Technology | Portfolio",
+          "name": "Atakan Yağlı - Loop Technology",
+          "description": "Denizli Yazılım ve SEO Ajansı",
           "inLanguage": "en-US"
         },
         {
@@ -117,6 +104,39 @@
             "https://github.com/Rwin74",
             "https://twitter.com/atakanyagli"
           ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://atakanyagli.com/#localbusiness",
+          "name": "Loop Technology",
+          "image": "https://atakanyagli.com/images/loop-logo.webp",
+          "telephone": "+905447218974",
+          "url": "https://atakanyagli.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Yenişafak mahallesi 1034 sok. no 14M",
+            "addressLocality": "Merkezefendi",
+            "addressRegion": "Denizli",
+            "postalCode": "20000",
+            "addressCountry": "TR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 37.7830,
+            "longitude": 29.0963
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
         },
         {
           "@type": "BreadcrumbList",

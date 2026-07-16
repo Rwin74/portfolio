@@ -30,7 +30,7 @@ const Hero = () => {
                         {t.hero.subtitle}
                     </motion.div>
 
-                    <motion.h1 
+                    <motion.h2 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -38,7 +38,7 @@ const Hero = () => {
                     >
                         {t.hero.titleLine1}
                         <span className="block text-gray-500 mt-2">{t.hero.titleLine2}</span>
-                    </motion.h1>
+                    </motion.h2>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from './context/LanguageContext';
 import HomePage from './pages/HomePage';
 import Footer from './components/Footer';
@@ -9,10 +10,14 @@ const KnowledgeGraph = React.lazy(() => import('./pages/KnowledgeGraph'));
 const LoopDetail = React.lazy(() => import('./pages/LoopDetail'));
 const ProjectDetail = React.lazy(() => import('./pages/ProjectDetail'));
 const Research = React.lazy(() => import('./pages/Research'));
+const DenizliSeo = React.lazy(() => import('./pages/DenizliSeo'));
+const DenizliYazilim = React.lazy(() => import('./pages/DenizliYazilim'));
+const DenizliWebSite = React.lazy(() => import('./pages/DenizliWebSite'));
 
 function App() {
   return (
-    <LanguageProvider>
+    <HelmetProvider>
+      <LanguageProvider>
       <div className="relative min-h-screen text-foreground selection:bg-primary selection:text-white flex flex-col">
         
         {/* Gemini-style Tech/Galaxy Background */}
@@ -33,6 +38,9 @@ function App() {
                   <Route path="/loop-technology" element={<LoopDetail />} />
                   <Route path="/project/:slug" element={<ProjectDetail />} />
                   <Route path="/research" element={<Research />} />
+                  <Route path="/denizli-seo" element={<DenizliSeo />} />
+                  <Route path="/denizli-yazilim" element={<DenizliYazilim />} />
+                  <Route path="/denizli-web-tasarim" element={<DenizliWebSite />} />
                 </Routes>
               </React.Suspense>
             </div>
@@ -41,6 +49,7 @@ function App() {
         </div>
       </div>
     </LanguageProvider>
+    </HelmetProvider>
   );
 }
 
