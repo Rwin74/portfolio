@@ -13,6 +13,8 @@ const Research = React.lazy(() => import('./pages/Research'));
 const DenizliSeo = React.lazy(() => import('./pages/DenizliSeo'));
 const DenizliYazilim = React.lazy(() => import('./pages/DenizliYazilim'));
 const DenizliWebSite = React.lazy(() => import('./pages/DenizliWebSite'));
+const DenizliOzelYazilim = React.lazy(() => import('./pages/DenizliOzelYazilim'));
+const DenizliSosyalMedya = React.lazy(() => import('./pages/DenizliSosyalMedya'));
 const Blog = React.lazy(() => import('./pages/Blog'));
 const BlogPost = React.lazy(() => import('./pages/BlogPost'));
 
@@ -43,6 +45,8 @@ function App() {
                   <Route path="/denizli-seo" element={<DenizliSeo />} />
                   <Route path="/denizli-yazilim" element={<DenizliYazilim />} />
                   <Route path="/denizli-web-tasarim" element={<DenizliWebSite />} />
+                  <Route path="/denizli-ozel-yazilim" element={<DenizliOzelYazilim />} />
+                  <Route path="/denizli-sosyal-medya-yonetimi" element={<DenizliSosyalMedya />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/:slug" element={<BlogPost />} />
                 </Routes>

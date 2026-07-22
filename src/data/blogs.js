@@ -121,5 +121,53 @@ export const blogs = [
             <h3>Neden Bizi Seçmelisiniz?</h3>
             <p>Atakan Yağlı ve Loop Technology, yapay zeka sistemleri üzerine kendi projelerini (örneğin Omni-Vital, ResQ-72) geliştiren bir ekiptir. Yapay zekanın dilinden en iyi biz anlıyoruz. <strong>Denizli SEO</strong> stratejinizi sıradan yöntemlerle değil, AI destekli veri analizi, kod optimizasyonu ve modern algoritmalarla kurguluyoruz.</p>
         `
+    },
+    {
+        id: "6",
+        slug: "denizli-ozel-yazilim-gelistirme-rehberi",
+        title: "Denizli Özel Yazılım Geliştirme Rehberi: İşletmenize Özel Çözümler",
+        excerpt: "Denizli'de şirketinizin verimliliğini artıracak özel yazılım geliştirme süreçleri, ERP entegrasyonları ve doğru yazılım ekibi seçimi.",
+        date: "20 Temmuz 2026",
+        readTime: "5 dk okuma",
+        image: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&q=80&w=2070",
+        category: "Özel Yazılım",
+        content: `
+            <h2>İşletmenizin İhtiyaçlarına Özel Kod Mimarisi</h2>
+            <p>Denizli sanayisi ve ticaretinde rekabet hızla büyüyor. Şirketinizin operasyonel süreçlerini hızlandırmak ve personel verimliliğini artırmak için hazır şablonlar yerine <strong>Denizli özel yazılım</strong> çözümlerine yatırım yapmak stratejik bir avantajdır.</p>
+
+            <h3>Neden Özel Yazılım Tercih Edilmeli?</h3>
+            <ul>
+                <li><strong>Tam Esneklik:</strong> İş akışlarınıza %100 uyum sağlayan özel panel ve iş mantığı (business logic).</li>
+                <li><strong>Güvenlik ve Mülkiyet:</strong> Kod mülkiyetinin tamamen sizde olduğu, harici lisans ücreti ödemediğiniz güvenli yapı.</li>
+                <li><strong>Sistem Entegrasyonu:</strong> Ön muhasebe, kargo, ERP ve pazaryeri sistemlerinizle tek tıkla haberleşen API bağlantıları.</li>
+            </ul>
+
+            <h3>Loop Technology ile Özel Yazılım Süreci</h3>
+            <p>Atakan Yağlı liderliğindeki Loop Technology ekibimiz, Denizli'de endüstriyel ERP'den mobil uygulamalara kadar ölçeklenebilir <strong>özel yazılım geliştirme</strong> hizmeti vermektedir. Projenizi baştan sona analiz ediyor, modern kod standartlarıyla hayata geçiriyoruz.</p>
+        `
+    },
+    {
+        id: "7",
+        slug: "denizli-sosyal-medya-yonetimi-rehberi",
+        title: "Denizli Firmaları İçin Sosyal Medya Yönetimi ve Marka Büyütme Rehberi",
+        excerpt: "Denizli'de markanızın sosyal medyada (Instagram, Meta, LinkedIn) doğru kitleye ulaşması ve potansiyel müşterilere dönüşmesi için stratejik tavsiyeler.",
+        date: "22 Temmuz 2026",
+        readTime: "4 dk okuma",
+        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1974",
+        category: "Sosyal Medya",
+        content: `
+            <h2>Sosyal Medyada Sadece Görünmeyin, Dönüşüm Yakalayın</h2>
+            <p>Denizli'de yerel müşterilere veya ulusal pazara ulaşmanın en kestirme yolu profesyonel <strong>sosyal medya yönetimi</strong> ve performans pazarlamasıdır. Ancak sadece fotoğraf paylaşmak markanızı büyütmez.</p>
+
+            <h3>Etkili Bir Sosyal Medya Yönetiminde Olmazsa Olmazlar</h3>
+            <ol>
+                <li><strong>Özgün Video & Reels Kurguları:</strong> Kullanıcıların ilgisini çeken, trend müzikler ve net mesaj içeren kısa videolar.</li>
+                <li><strong>Performans Reklamları (Meta Ads):</strong> Doğru hedef kitle analiziyle reklam bütçenizin doğrudan müşteri olarak dönmesini sağlamak.</li>
+                <li><strong>Kurumsal Tasarım Dili:</strong> Marka algısını yükselten profesyonel renk paletleri ve görsel kurgu.</li>
+            </ol>
+
+            <h3>Denizli Sosyal Medya Ajansı Farkı</h3>
+            <p>Loop Technology olarak, <strong>Denizli sosyal medya yönetimi</strong> hizmetimizde markanızın dijital varlığını veri ve tasarım gücüyle büyütüyoruz. Hedef kitlenizin dönüşümünü artıracak stratejiler için bizimle iletişime geçin.</p>
+        `
     }
 ];

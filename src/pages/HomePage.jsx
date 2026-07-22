@@ -45,13 +45,13 @@ function HomePage() {
         <Navbar />
         <main className="max-w-7xl mx-auto px-6 space-y-32 pb-20">
           
-          {/* SEO Hidden H1 - Anahtar Kelime Hedeflemesi İçin (Sayfa akışını bozmamak adına Screen Reader Only (sr-only) veya tasarımın bir parçası yapılabilir, biz burada göze batmayan bir tasarım yapıyoruz) */}
+          {/* SEO Hidden H1 - Anahtar Kelime Hedeflemesi İçin */}
           <div className="pt-32 text-center -mb-20">
-             <h1 className="text-xl md:text-2xl text-gray-500 font-light max-w-3xl mx-auto">
-                Denizli'nin Yenilikçi <Link to="/denizli-yazilim" className="text-blue-400 hover:underline">Yazılım</Link> ve <Link to="/denizli-seo" className="text-blue-400 hover:underline">SEO</Link> Ajansı | Atakan Yağlı & Loop Technology
+             <h1 className="text-xl md:text-2xl text-gray-500 font-light max-w-4xl mx-auto">
+                Denizli'nin Yenilikçi <Link to="/denizli-yazilim" className="text-blue-400 hover:underline">Yazılım</Link>, <Link to="/denizli-ozel-yazilim" className="text-cyan-400 hover:underline">Özel Yazılım</Link> ve <Link to="/denizli-seo" className="text-blue-400 hover:underline">SEO</Link> Ajansı | Atakan Yağlı & Loop Technology
              </h1>
              <p className="text-sm text-gray-600 mt-2">
-                Profesyonel <Link to="/denizli-web-tasarim" className="hover:underline">Denizli web tasarım</Link> ve dijital dönüşüm hizmetleri.
+                Profesyonel <Link to="/denizli-web-tasarim" className="hover:underline">Denizli web tasarım</Link> ve <Link to="/denizli-sosyal-medya-yonetimi" className="text-pink-400 hover:underline">Sosyal Medya Yönetimi</Link> çözümleri.
              </p>
           </div>
 

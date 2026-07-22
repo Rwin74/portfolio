@@ -17,12 +17,16 @@ export default defineConfig({
         '/denizli-seo',
         '/denizli-yazilim',
         '/denizli-web-tasarim',
+        '/denizli-ozel-yazilim',
+        '/denizli-sosyal-medya-yonetimi',
         '/blog',
         '/blog/denizli-yazilim-sirketleri-ile-dijital-donusum',
         '/blog/denizli-seo-ajansi-nasil-secilir',
         '/blog/denizli-web-tasarim-trendleri',
         '/blog/denizlide-e-ticaret-sitesi-kurmak',
-        '/blog/yapay-zeka-destekli-seo-denizli'
+        '/blog/yapay-zeka-destekli-seo-denizli',
+        '/blog/denizli-ozel-yazilim-gelistirme-rehberi',
+        '/blog/denizli-sosyal-medya-yonetimi-rehberi'
       ]
     })
   ],
